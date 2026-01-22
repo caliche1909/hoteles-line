@@ -1,0 +1,73 @@
+# Archivos compilados de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Directorios de build de NetBeans
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Archivos privados de NetBeans
+/nbproject/private/
+build.xml.bak
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.log
+
+# Directorio de Chrome para WhatsApp (datos sensibles de sesión)
+/chromeWA/
+
+# Facturas generadas (opcional - descomenta si NO quieres subirlas)
+# /facturas/
+
+# Carpeta null (parece temporal)
+/null/
+
+# Configuración de VS Code (opcional - puedes incluirla si quieres compartir)
+# .vscode/
+
+# Archivos de configuración con credenciales sensibles
+# IMPORTANTE: Protege tus credenciales de base de datos
+# src/conectar/Canectar.java
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Gradle
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Otros
+*.orig
