@@ -35,16 +35,36 @@ Este es un sistema completo de gestión hotelera (PMS) desarrollado en Java con 
 
 ## 🚀 Cómo Ejecutar en VS Code
 
-1. **Asegúrate de tener instalado:**
-   - Extension Pack for Java (Microsoft)
-   - Language Support for Java (Red Hat)
+### ⚙️ Configuración de Base de Datos
 
-2. **Abrir el proyecto:**
-   - Ya está configurado con `.vscode/settings.json` y `.vscode/launch.json`
+El proyecto usa dos bases de datos:
+- **🔵 DESARROLLO**: `doralplazapruebas` (para pruebas, se usa al ejecutar con F5)
+- **🔴 PRODUCCIÓN**: `doralplaza` (base de datos real, se usa en builds)
 
-3. **Ejecutar:**
-   - Presiona `F5` o ve a "Run and Debug" 
-   - Selecciona "Launch ProyectoDoral02"
+### 🔧 Desarrollo (Debug con F5)
+
+1. **Presiona `F5`** en VS Code
+2. El proyecto automáticamente:
+   - Se conectará a `doralplazapruebas`
+   - Mostrará: 🔵 "Conectado a BD de DESARROLLO"
+
+### 📦 Build de Producción
+
+Para crear un build que use la base de datos de producción:
+
+```powershell
+.\build-production.ps1
+```
+
+Esto creará un JAR en `dist/ProyectoDoral02.jar` configurado para producción.
+
+### 🔄 Cambiar Manualmente el Entorno
+
+Edita `config.properties` y cambia:
+```properties
+environment=development  # Para desarrollo (doralplazapruebas)
+environment=production   # Para producción (doralplaza)
+```
 
 ## 📦 Librerías Incluidas
 

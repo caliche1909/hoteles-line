@@ -24,6 +24,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import vistas.ThermalPrinter;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public final class ReporteSire {
 
@@ -82,7 +83,8 @@ public final class ReporteSire {
         if (driver == null) {
             try {
 
-                System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\chromedriver.exe");
+                // WebDriverManager descarga automáticamente el ChromeDriver correcto
+                WebDriverManager.chromedriver().setup();
                 System.setProperty("webdriver.chrome.silentOutput", "true");
                 localPath = new java.io.File(".").getCanonicalPath();
 

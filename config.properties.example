@@ -1,0 +1,21 @@
+# Configuración de Base de Datos - EJEMPLO
+# Copia este archivo como "config.properties" y modifica con tus credenciales
+
+# Entorno actual: development o production
+environment=development
+
+# === DESARROLLO ===
+db.dev.url=jdbc:mysql://localhost:3306/TU_BD_DESARROLLO
+db.dev.username=TU_USUARIO
+db.dev.password=TU_PASSWORD
+db.dev.driver=com.mysql.cj.jdbc.Driver
+
+# === PRODUCCIÓN ===
+db.prod.url=jdbc:mysql://localhost:3306/TU_BD_PRODUCCION
+db.prod.username=TU_USUARIO
+db.prod.password=TU_PASSWORD
+db.prod.driver=com.mysql.cj.jdbc.Driver
+
+# Configuración adicional
+db.pool.maxConnections=10
+db.pool.timeout=30000

@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.openqa.selenium.WebElement;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MensajesWATest {
 
@@ -38,7 +39,8 @@ public class MensajesWATest {
 
     private void iniciarDriver() {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\chromedriver-win64\\chromedriver.exe");
+        // WebDriverManager descarga automáticamente el ChromeDriver correcto
+        WebDriverManager.chromedriver().setup();
         //System.setProperty("webdriver.chrome.silentOutput", "true"); para silenciar las impresines en consola
 
         ChromeOptions optionsGoo = new ChromeOptions();

@@ -80,7 +80,19 @@ public final class inicio extends javax.swing.JFrame {
         if (usuarioOperando != null) {
             registroExitoso = true;
             usus = usuarioOperando;
-            
+        } else {
+            // Login falló, verificar el motivo
+            String error = sql.getUltimoError();
+            if (error.equals("USUARIO_NO_EXISTE")) {
+                JOptionPane.showMessageDialog(null, "❌ El usuario no existe", "Error de autenticación", JOptionPane.ERROR_MESSAGE);
+                return;
+            } else if (error.equals("CONTRASEÑA_INCORRECTA")) {
+                JOptionPane.showMessageDialog(null, "❌ Contraseña incorrecta", "Error de autenticación", JOptionPane.ERROR_MESSAGE);
+                return;
+            } else if (error.equals("ERROR_BD")) {
+                JOptionPane.showMessageDialog(null, "❌ Error de conexión a la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
         }
 
         if ( registroExitoso) {

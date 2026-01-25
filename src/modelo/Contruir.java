@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Contruir {
 
@@ -50,7 +51,9 @@ public class Contruir {
     public Contruir() {
         try {
             localPath = new java.io.File(".").getCanonicalPath();
-            System.setProperty("webdriver.chrome.driver", localPath + "\\crome driver\\chromedriver.exe");
+            
+            // WebDriverManager descarga automáticamente el ChromeDriver correcto
+            WebDriverManager.chromedriver().setup();
 
             ChromeOptions optionsGoo = new ChromeOptions();
             optionsGoo.addArguments("--no-sandbox", "--disable-notifications", "--user-data-dir=" + localPath + "\\chromeWA");

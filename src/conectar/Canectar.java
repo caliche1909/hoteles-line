@@ -12,22 +12,30 @@ import modelo.Cliente;
 import modelo.Contable;
 import modelo.Habitaciones;
 import modelo.Hotel;
+import util.ConfigDB;
 
 public class Canectar {
 
     JOptionPane optionPane = new JOptionPane();
     private Connection con = null;
     
-    private final String url = "jdbc:mysql://localhost:3306/doralplaza";
-    private final String usuario = "root";
-    private final String pass = "Carlos.2020#";
-    private final String driver = "com.mysql.cj.jdbc.Driver";
+    // Usar ConfigDB para obtener las credenciales según el entorno
+    private final String url = ConfigDB.getUrl();
+    private final String usuario = ConfigDB.getUsername();
+    private final String pass = ConfigDB.getPassword();
+    private final String driver = ConfigDB.getDriver();
 
     public Connection conexion() {
 
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, usuario, pass);
+            // Mostrar en qué entorno estamos conectados
+            if (ConfigDB.isDevelopment()) {
+                System.out.println("🔵 Conectado a BD de DESARROLLO");
+            } else {
+                System.out.println("🔴 Conectado a BD de PRODUCCIÓN");
+            }
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error de conexion a la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }

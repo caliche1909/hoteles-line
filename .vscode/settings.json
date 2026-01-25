@@ -2,10 +2,8 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "build/classes",
     "java.project.referencedLibraries": [
-        "src/lib/*.jar",
-        "src/lib/netbeans/*.jar",
-        "src/lib/Itext 7 java/*.jar",
-        "src/lib/selenium/*.jar",
-        "src/lib/selenium/lib/*.jar"
-    ]
+        "src/lib/**/*.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

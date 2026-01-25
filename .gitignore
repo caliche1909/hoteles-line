@@ -39,6 +39,9 @@ Desktop.ini
 # Configuración de VS Code (opcional - puedes incluirla si quieres compartir)
 # .vscode/
 
+# ⚠️ ARCHIVO DE CONFIGURACIÓN CON CREDENCIALES - NO SUBIR
+config.properties
+
 # Archivos de configuración con credenciales sensibles
 # IMPORTANTE: Protege tus credenciales de base de datos
 # src/conectar/Canectar.java

@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MensajesWATest2 {
 
@@ -46,7 +47,8 @@ public class MensajesWATest2 {
     public void iniciarDriver() {
         if (driver == null) {
             try {
-                System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\chromedriver.exe");
+                // WebDriverManager descarga automáticamente el ChromeDriver correcto
+                WebDriverManager.chromedriver().setup();
 
                 ChromeOptions optionsGoo = new ChromeOptions();
                 optionsGoo.addArguments("--no-sandbox", "--disable-notifications", "--user-data-dir=" + localPath + "\\chromeWA");

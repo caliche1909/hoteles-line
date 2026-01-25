@@ -11,6 +11,13 @@ import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
 
 public class SqlUsuarios extends conectar.Canectar {
+    
+    // Variables para rastrear el tipo de error en login
+    private String ultimoError = "";
+    
+    public String getUltimoError() {
+        return ultimoError;
+    }
 
     public boolean registrar(UsuarioOperando usr) {
         PreparedStatement ps = null;
@@ -71,6 +78,18 @@ public class SqlUsuarios extends conectar.Canectar {
 
     public UsuarioOperando login(UsuarioOperando usr) {
         Connection conn = null;
+        boolean isDev = util.ConfigDB.isDevelopment();
+        ultimoError = ""; // Limpiar error previo
+        
+        // DEBUG: En desarrollo, mostrar contraseña de prueba encriptada
+        if (isDev) {
+            String testPass = "CarlosMoran";
+            String hashedTest = BCrypt.hashpw(testPass, BCrypt.gensalt());
+            System.out.println("🔐 [DEBUG] Contraseña de prueba: " + testPass);
+            System.out.println("🔐 [DEBUG] Hash generado: " + hashedTest);
+            System.out.println("🔐 [DEBUG] Intentando login con usuario: " + usr.getUsuario());
+        }
+        
         try {
             conn = conexion();
             String sql = "SELECT u.*, t.Roll_Usuario "
@@ -80,34 +99,56 @@ public class SqlUsuarios extends conectar.Canectar {
             try ( PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, usr.getUsuario());
                 try ( ResultSet rs = ps.executeQuery()) {
-                    if (rs.next() && BCrypt.checkpw(usr.getContrasenia(), rs.getString("Contrasenia"))) {
-                        UsuarioOperando usuarioLogueado = new UsuarioOperando();
-                        usuarioLogueado.setIdUsuario(rs.getInt("Id_Usuario"));
-                        usuarioLogueado.setUltima_secion(rs.getTimestamp("Ultima_Secion").toLocalDateTime());
-                        usuarioLogueado.setCedula(rs.getString("Cedula"));
-                        usuarioLogueado.setNombres(rs.getString("Nombres"));
-                        usuarioLogueado.setApellidos(rs.getString("Apellidos"));
-                        usuarioLogueado.setTelefono(rs.getString("Telefono"));
-                        usuarioLogueado.setCorreo(rs.getString("Correo"));
-                        usuarioLogueado.setUsuario(rs.getString("Usuario"));
-                        usuarioLogueado.setContrasenia(rs.getString("Contrasenia"));
-                        usuarioLogueado.setId_tipo(rs.getInt("Id_Tipo"));
-                        usuarioLogueado.setRoll_usuarios(rs.getString("Roll_Usuario"));
-                        usuarioLogueado.setIdHotel(rs.getInt("Id_Hotel"));
-
-                        // Actualizar la última sesión del usuario
-                        String sqlUpdate = "UPDATE usuarios SET Ultima_Secion = NOW() WHERE Id_Usuario = ?";
-                        try ( PreparedStatement psUpdate = conn.prepareStatement(sqlUpdate)) {
-                            psUpdate.setInt(1, usuarioLogueado.getIdUsuario());
-                            psUpdate.executeUpdate();
+                    if (rs.next()) {
+                        // Usuario existe
+                        String hashedPasswordDB = rs.getString("Contrasenia");
+                        if (isDev) {
+                            System.out.println("✓ [DEBUG] Usuario encontrado en BD");
+                            System.out.println("🔐 [DEBUG] Hash en BD: " + hashedPasswordDB);
+                            System.out.println("🔐 [DEBUG] Contraseña ingresada: " + usr.getContrasenia());
                         }
+                        
+                        // Verificar contraseña
+                        if (BCrypt.checkpw(usr.getContrasenia(), hashedPasswordDB)) {
+                            if (isDev) System.out.println("✅ [DEBUG] Contraseña correcta!");
+                            
+                            UsuarioOperando usuarioLogueado = new UsuarioOperando();
+                            usuarioLogueado.setIdUsuario(rs.getInt("Id_Usuario"));
+                            usuarioLogueado.setUltima_secion(rs.getTimestamp("Ultima_Secion").toLocalDateTime());
+                            usuarioLogueado.setCedula(rs.getString("Cedula"));
+                            usuarioLogueado.setNombres(rs.getString("Nombres"));
+                            usuarioLogueado.setApellidos(rs.getString("Apellidos"));
+                            usuarioLogueado.setTelefono(rs.getString("Telefono"));
+                            usuarioLogueado.setCorreo(rs.getString("Correo"));
+                            usuarioLogueado.setUsuario(rs.getString("Usuario"));
+                            usuarioLogueado.setContrasenia(rs.getString("Contrasenia"));
+                            usuarioLogueado.setId_tipo(rs.getInt("Id_Tipo"));
+                            usuarioLogueado.setRoll_usuarios(rs.getString("Roll_Usuario"));
+                            usuarioLogueado.setIdHotel(rs.getInt("Id_Hotel"));
 
-                        return usuarioLogueado;
+                            // Actualizar la última sesión del usuario
+                            String sqlUpdate = "UPDATE usuarios SET Ultima_Secion = NOW() WHERE Id_Usuario = ?";
+                            try ( PreparedStatement psUpdate = conn.prepareStatement(sqlUpdate)) {
+                                psUpdate.setInt(1, usuarioLogueado.getIdUsuario());
+                                psUpdate.executeUpdate();
+                            }
+
+                            return usuarioLogueado;
+                        } else {
+                            if (isDev) System.out.println("❌ [DEBUG] Contraseña incorrecta!");
+                            ultimoError = "CONTRASEÑA_INCORRECTA";
+                            return null;
+                        }
+                    } else {
+                        if (isDev) System.out.println("❌ [DEBUG] Usuario NO encontrado en BD");
+                        ultimoError = "USUARIO_NO_EXISTE";
+                        return null;
                     }
                 }
             }
         } catch (SQLException e) {
-            System.err.println(e);
+            System.err.println("Error en login: " + e);
+            ultimoError = "ERROR_BD";
         } finally {
             try {
                 if (conn != null) {
@@ -117,7 +158,7 @@ public class SqlUsuarios extends conectar.Canectar {
                 System.err.println(e);
             }
         }
-        return null; // Retorna null si no se encuentra el usuario o si la contraseña no coincide
+        return null;
     }
 
     public UsuarioOperando existeUsuario(String usuario) {
