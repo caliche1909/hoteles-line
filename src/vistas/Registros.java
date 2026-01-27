@@ -479,7 +479,11 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
     }
 
     public void mensajeWaRes(int idCliente) {
-        if (verificarCampos()) {
+        System.out.println(">>> ENTRANDO A mensajeWaRes() con idCliente: " + idCliente);
+        boolean camposVerificados = verificarCampos();
+        System.out.println("verificarCampos() retorna: " + camposVerificados);
+        if (camposVerificados) {
+            System.out.println("Ocultando ventana de registro y llamando a enviarMensajeWA()...");
             this.setVisible(false);
             if (res != null) {
                 res.toFront();
@@ -512,13 +516,20 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
     }
 
     public CompletableFuture<String> enviarMensajeWA() {
+        System.out.println(">>> ENTRANDO A enviarMensajeWA() - INICIANDO ENVIO ASINCRONO");
         return CompletableFuture.supplyAsync(() -> {
             String nombreCliente = "*" + regisnom.getText().split(" ")[0] + "*";
             String telefonoWA = txtIndicativo.getText() + registel.getText();
+            System.out.println("Telefono WhatsApp: " + telefonoWA);
+            System.out.println("Nombre cliente: " + nombreCliente);
             construirMensajeWatsaap(nombreCliente);
+            System.out.println("Mensaje construido: " + MensajeWhatsApp);
+            System.out.println("Creando instancia de MensajesWATest2...");
             MensajesWATest2 enviar = new MensajesWATest2();
             try {
+                System.out.println("Llamando a enviar.enviarMensaje()...");
                 boolean mensajeEnviado = enviar.enviarMensaje(telefonoWA, MensajeWhatsApp);
+                System.out.println("Resultado enviarMensaje: " + mensajeEnviado);
                 if (mensajeEnviado) {
                     jlbMensajeExitoso.setVisible(true);
                     btnVerificarWa.setVisible(false);
@@ -758,7 +769,11 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
             this.setVisible(true);
         }
         /*si el mensaje de watsaap no ha sido enviado, entonces lo envia*/
+        System.out.println("========== VERIFICANDO ENVIO DE WHATSAPP ==========");
+        System.out.println("elMensajeYaFueEnviado = " + elMensajeYaFueEnviado);
+        System.out.println("ID Cliente: " + clienteGlobal.getId_Cliente());
         if (!elMensajeYaFueEnviado) {
+            System.out.println("Llamando a mensajeWaRes()...");
             mensajeWaRes(clienteGlobal.getId_Cliente());
 
         } else {

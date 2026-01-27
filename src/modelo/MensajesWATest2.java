@@ -23,8 +23,6 @@ public class MensajesWATest2 {
 
     private WebDriver driver;
     private String localPath;
-    private boolean APARECIO_QR = false;
-    private boolean SESION_INICIADA = false;
     private boolean yaCodificado = false;
 
     public MensajesWATest2() {
@@ -35,272 +33,256 @@ public class MensajesWATest2 {
         }
     }
 
-    public boolean esperaExplicita(int seconds) {
-        try {
-            Thread.sleep(seconds);
-            return true;
-        } catch (InterruptedException e) {
-            return false;
-        }
-    }
-
     public void iniciarDriver() {
         if (driver == null) {
             try {
-                // WebDriverManager descarga automáticamente el ChromeDriver correcto
+                System.out.println("[WA] Configurando WebDriverManager...");
                 WebDriverManager.chromedriver().setup();
 
                 ChromeOptions optionsGoo = new ChromeOptions();
-                optionsGoo.addArguments("--no-sandbox", "--disable-notifications", "--user-data-dir=" + localPath + "\\chromeWA");
+                // Opciones para mejorar rendimiento
+                optionsGoo.addArguments(
+                    "--no-sandbox",
+                    "--disable-notifications",
+                    "--disable-gpu",
+                    "--disable-dev-shm-usage",
+                    "--disable-extensions",
+                    "--disable-popup-blocking",
+                    "--start-maximized",
+                    "--user-data-dir=" + localPath + "\\chromeWA"
+                );
+                // Silenciar logs innecesarios
+                optionsGoo.addArguments("--log-level=3");
+                optionsGoo.setExperimentalOption("excludeSwitches", new String[]{"enable-logging"});
 
+                System.out.println("[WA] Iniciando Chrome...");
                 driver = new ChromeDriver(optionsGoo);
-                // enviamos laventana emergente ala parte de atras
-                try {
-                    Thread.sleep(10);
-                    Robot robot = new Robot();
-                    robot.keyPress(KeyEvent.VK_ALT);
-                    robot.keyPress(KeyEvent.VK_TAB);
-                    robot.keyRelease(KeyEvent.VK_ALT);
-                    robot.keyRelease(KeyEvent.VK_TAB);
-                } catch (AWTException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(MensajesWATest.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                driver.manage().window().maximize();
+                
+                // Enviar ventana al fondo
+                enviarVentanaAlFondo();
+                
+                System.out.println("[WA] Chrome iniciado correctamente");
 
             } catch (Exception e) {
-                System.out.println("Fallo al iniciar el WebDriver: " + e.getMessage());
-
+                System.out.println("[WA] ERROR al iniciar WebDriver: " + e.getMessage());
             }
-
-        } else {
-            // enviamos laventana emergente ala parte de atras
-                try {
-                    Thread.sleep(10);
-                    Robot robot = new Robot();
-                    robot.keyPress(KeyEvent.VK_ALT);
-                    robot.keyPress(KeyEvent.VK_TAB);
-                    robot.keyRelease(KeyEvent.VK_ALT);
-                    robot.keyRelease(KeyEvent.VK_TAB);
-                } catch (AWTException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(MensajesWATest.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            driver.manage().window().maximize();
         }
     }
 
-    public boolean navegarAWhatsApp(String telefono, String mensaje) {
+    private void enviarVentanaAlFondo() {
         try {
-            String url = "https://web.whatsapp.com/send?phone=" + telefono + "&text=" + mensaje;
-            driver.get(url);
-            return true;
-        } catch (Exception e) {
-            System.out.println("Fallo al navegar a WhatsApp: " + e.getMessage());
-            return false;
+            Thread.sleep(100);
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_ALT);
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_ALT);
+            robot.keyRelease(KeyEvent.VK_TAB);
+        } catch (AWTException | InterruptedException e) {
+            // Ignorar - no es crítico
         }
     }
 
     public boolean enviarMensaje(String telefono, String mensaje) {
+        System.out.println("[WA] === INICIANDO ENVIO DE MENSAJE ===");
+        
+        // Codificar mensaje si no está codificado
         if (!yaCodificado) {
             try {
                 mensaje = URLEncoder.encode(mensaje, "UTF-8");
+                yaCodificado = true;
             } catch (UnsupportedEncodingException ex) {
                 Logger.getLogger(MensajesWATest2.class.getName()).log(Level.SEVERE, null, ex);
             }
-            yaCodificado = true;
         }
-        if (driver == null) {
-            iniciarDriver();
-            if (navegarAWhatsApp(telefono, mensaje)) {
-                esperaExplicita(1000);
-                if (verificarPantallaQR()) {
-                    esperaExplicita(1000);
-                    JOptionPane.showMessageDialog(null, """
-                                                ***FALTA INICIO DE SESION EN WHATSAPP***
-                                                
-                                                1-> Debe escanear el codigo QR para inciar
-                                                sesion en WhatsApp.
-                                                
-                                                2-> Vuelva y de click en el boton OK, de este cuadro
-                                                de dialogo para seguier con el proceso
-                                                """);
-                    boolean sesionIniciada = esperarInicioDeSesion();
-                    if (sesionIniciada || SESION_INICIADA) {
-                        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-                        WebElement sendButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[aria-label='Enviar']")));
-
-                        sendButton.click();
-                        esperaExplicita(1000);
-                        cerrarDriver();
-                        return true;
-                    }
-                } else if (esperarInicioDeSesion()) {
-                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-                    WebElement sendButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[aria-label='Enviar']")));
-
-                    sendButton.click();
-                    esperaExplicita(1000);
-                    cerrarDriver();
-                    return true;
-
-                }
-
-            } else {
-                System.out.println("no se pudo navegar a watsaap. error de la linea 113");
+        
+        try {
+            // Iniciar driver si es necesario
+            if (driver == null) {
+                iniciarDriver();
             }
-        } else {
-            if (navegarAWhatsApp(telefono, mensaje)) {
-                esperaExplicita(1000);
-                if (verificarPantallaQR()) {
-                    esperaExplicita(1000);
-                    JOptionPane.showMessageDialog(null, """
-                                                ***FALTA INICIO DE SESION EN WHATSAPP***
-                                                
-                                                1-> Debe escanear el codigo QR para inciar
-                                                sesion en WhatsApp.
-                                                
-                                                2-> Vuelva y de click en el boton OK, de este cuadro
-                                                de dialogo para seguier con el proceso
-                                                """);
-                    boolean sesionIniciada = esperarInicioDeSesion();
-                    if (sesionIniciada || SESION_INICIADA) {
-                        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-                        WebElement sendButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[aria-label='Enviar']")));
-
-                        sendButton.click();
-                        esperaExplicita(1000);
-                        cerrarDriver();
-                        return true;
-                    }
-                } else if (esperarInicioDeSesion()) {
-                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-                    WebElement sendButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[aria-label='Enviar']")));
-
-                    sendButton.click();
-                    esperaExplicita(1000);
+            
+            // Navegar a WhatsApp Web con el mensaje
+            String url = "https://web.whatsapp.com/send?phone=" + telefono + "&text=" + mensaje;
+            System.out.println("[WA] Navegando a WhatsApp Web...");
+            driver.get(url);
+            
+            // Esperar a que cargue la página (máximo 15 segundos)
+            WebDriverWait waitCorto = new WebDriverWait(driver, Duration.ofSeconds(15));
+            
+            // Verificar si aparece QR (sesión no iniciada)
+            System.out.println("[WA] Verificando estado de sesión...");
+            if (necesitaInicioSesion()) {
+                System.out.println("[WA] Se requiere escanear código QR");
+                JOptionPane.showMessageDialog(null, 
+                    "***FALTA INICIO DE SESION EN WHATSAPP***\n\n" +
+                    "1-> Escanea el código QR en WhatsApp Web\n" +
+                    "2-> Haz clic en OK cuando hayas iniciado sesión",
+                    "WhatsApp", JOptionPane.INFORMATION_MESSAGE);
+                
+                // Esperar a que el usuario inicie sesión (máximo 60 segundos)
+                if (!esperarSesionIniciada(60)) {
+                    System.out.println("[WA] Timeout esperando inicio de sesión");
                     cerrarDriver();
-                    return true;
-
+                    return false;
                 }
-
-            } else {
-                System.out.println("no se pudo navegar a la url de whatsaap:  error de la linea 107");
             }
-
+            
+            // Esperar y hacer clic en el botón de enviar
+            System.out.println("[WA] Buscando botón de enviar...");
+            WebDriverWait waitEnviar = new WebDriverWait(driver, Duration.ofSeconds(30));
+            
+            // Intentar encontrar el botón de enviar con diferentes selectores
+            WebElement sendButton = esperarBotonEnviar(waitEnviar);
+            
+            if (sendButton != null) {
+                System.out.println("[WA] Botón encontrado, enviando mensaje...");
+                sendButton.click();
+                
+                // Pequeña espera para que se envíe
+                Thread.sleep(2000);
+                
+                System.out.println("[WA] ✅ MENSAJE ENVIADO EXITOSAMENTE");
+                cerrarDriver();
+                return true;
+            } else {
+                System.out.println("[WA] No se encontró el botón de enviar");
+                cerrarDriver();
+                return false;
+            }
+            
+        } catch (Exception e) {
+            System.out.println("[WA] ERROR: " + e.getMessage());
+            cerrarDriver();
+            return false;
         }
+    }
+
+    /**
+     * Verifica si se necesita iniciar sesión (aparece QR)
+     */
+    private boolean necesitaInicioSesion() {
+        try {
+            // Esperar un poco a que cargue
+            Thread.sleep(3000);
+            
+            // Buscar canvas del QR o texto de vincular
+            boolean hayQR = !driver.findElements(By.cssSelector("canvas[aria-label='Scan me!']")).isEmpty();
+            boolean hayTextoVincular = !driver.findElements(By.xpath("//*[contains(text(),'Vincular con el número')]")).isEmpty();
+            boolean hayPantallaInicio = !driver.findElements(By.cssSelector("div[data-testid='qrcode']")).isEmpty();
+            
+            return hayQR || hayTextoVincular || hayPantallaInicio;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Espera a que se inicie sesión verificando múltiples elementos en paralelo
+     */
+    private boolean esperarSesionIniciada(int maxSegundos) {
+        System.out.println("[WA] Esperando inicio de sesión (máx " + maxSegundos + " seg)...");
+        
+        long inicio = System.currentTimeMillis();
+        long timeout = maxSegundos * 1000L;
+        
+        while ((System.currentTimeMillis() - inicio) < timeout) {
+            try {
+                // Verificar múltiples indicadores de sesión iniciada
+                boolean sesionActiva = 
+                    !driver.findElements(By.cssSelector("button[aria-label='Enviar']")).isEmpty() ||
+                    !driver.findElements(By.cssSelector("div[aria-label='Adjuntar']")).isEmpty() ||
+                    !driver.findElements(By.cssSelector("span[data-icon='send']")).isEmpty() ||
+                    !driver.findElements(By.cssSelector("footer")).isEmpty() ||
+                    !driver.findElements(By.cssSelector("div[contenteditable='true']")).isEmpty();
+                
+                if (sesionActiva) {
+                    System.out.println("[WA] Sesión detectada como activa");
+                    return true;
+                }
+                
+                // Verificar si ya no hay QR (usuario lo escaneó)
+                boolean qrDesaparecio = driver.findElements(By.cssSelector("canvas[aria-label='Scan me!']")).isEmpty() &&
+                                        driver.findElements(By.cssSelector("div[data-testid='qrcode']")).isEmpty();
+                
+                if (qrDesaparecio) {
+                    System.out.println("[WA] QR desapareció, esperando carga...");
+                    Thread.sleep(3000);
+                    return true;
+                }
+                
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                // Continuar intentando
+            }
+        }
+        
         return false;
     }
 
-    private boolean esperarInicioDeSesion() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='foto del perfil']")));
-            SESION_INICIADA = true;
-            return SESION_INICIADA;
-        } catch (Exception e) {
-            System.out.println("La foto de perfil no aparecio: " + e.getMessage());
-        }
-
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button._ai0b._ai08")));
-            SESION_INICIADA = true;
-            return SESION_INICIADA;
-        } catch (Exception e) {
-            System.out.println("No se encontro el boton de buscar: " + e.getMessage());
-        }
-
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[data-icon='search']")));
-            SESION_INICIADA = true;
-            return SESION_INICIADA;
-        } catch (Exception e) {
-            System.out.println("No se encontro el icono de buscar:  " + e.getMessage());
-        }
-
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[title='Detalles del perfil']")));
-            SESION_INICIADA = true;
-            return SESION_INICIADA;
-        } catch (Exception e) {
-            System.out.println("Boton de detalles del prfil no encontrado  " + e.getMessage());
-        }
-
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("_ak1i")));
-            SESION_INICIADA = true;
-            return SESION_INICIADA;
-        } catch (Exception e) {
-            System.out.println("Footer de whatsaap no encontrado:  " + e.getMessage());
-        }
-
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='Adjuntar']")));
-            SESION_INICIADA = true;
-            return SESION_INICIADA;
-        } catch (Exception e) {
-            System.out.println("Boton de footer de adjuntar no encontrado: " + e.getMessage());
-        }
-
-        return SESION_INICIADA;
-    }
-
-    public boolean verificarPantallaQR() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("canvas[aria-label='Scan me!']")));
-            APARECIO_QR = true;
-        } catch (Exception e) {
-            System.out.println("El QR no apareció: " + e.getMessage());
-        }
-
-        try {
-            if (!APARECIO_QR && !driver.findElements(By.cssSelector("button[text*='Descargar de Microsoft Store']")).isEmpty()) {
-                APARECIO_QR = true;
+    /**
+     * Espera el botón de enviar con múltiples selectores
+     */
+    private WebElement esperarBotonEnviar(WebDriverWait wait) {
+        // Lista de selectores posibles para el botón de enviar
+        String[] selectores = {
+            "button[aria-label='Enviar']",
+            "span[data-icon='send']",
+            "button[data-testid='send']",
+            "button[aria-label='Send']"
+        };
+        
+        for (int intento = 0; intento < 3; intento++) {
+            for (String selector : selectores) {
+                try {
+                    WebElement elemento = wait.until(
+                        ExpectedConditions.elementToBeClickable(By.cssSelector(selector))
+                    );
+                    if (elemento != null) {
+                        return elemento;
+                    }
+                } catch (Exception e) {
+                    // Probar siguiente selector
+                }
             }
-        } catch (Exception e) {
-            System.out.println("El botón de descarga no fue encontrado: " + e.getMessage());
-        }
-
-        try {
-            if (!APARECIO_QR && !driver.findElements(By.xpath("//*[contains(text(),'Vincular con el número de teléfono')]")).isEmpty()) {
-                APARECIO_QR = true;
+            
+            // Si no encontró, esperar un poco y reintentar
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                break;
             }
-        } catch (Exception e) {
-            System.out.println("El texto de vinculación no fue encontrado: " + e.getMessage());
         }
-
-        return APARECIO_QR;
+        
+        return null;
     }
 
     public void cerrarDriver() {
         if (driver != null) {
-            driver.quit();
-            driver = null;
+            try {
+                System.out.println("[WA] Cerrando navegador...");
+                driver.quit();
+            } catch (Exception e) {
+                System.out.println("[WA] Error al cerrar: " + e.getMessage());
+            } finally {
+                driver = null;
+                yaCodificado = false;
+            }
         }
     }
 
     public static void main(String[] args) {
-        System.out.println("Iniciando el programa...");
-        // Crear una instancia de la clase con el WebDriver
+        System.out.println("=== PRUEBA DE ENVIO WHATSAPP ===");
         MensajesWATest2 mensajesWA = new MensajesWATest2();
-
-        // Iniciar el WebDriver y navegar a WhatsApp
-        mensajesWA.iniciarDriver();
-
-        // Definir el número de teléfono y el mensaje a enviar
-        String telefono = "+573232951780";  // Reemplazar con un número de teléfono real
+        
+        String telefono = "+573232951780";
         String mensaje = "Hola, esto es una prueba desde MensajesWATest2!";
-
-        // Enviar el mensaje
+        
         boolean resultado = mensajesWA.enviarMensaje(telefono, mensaje);
+        
         if (resultado) {
-            System.out.println("Mensaje enviado exitosamente!");
+            System.out.println("✅ Mensaje enviado exitosamente!");
         } else {
-            System.out.println("No se pudo enviar el mensaje.");
+            System.out.println("❌ No se pudo enviar el mensaje.");
         }
     }
-
 }
