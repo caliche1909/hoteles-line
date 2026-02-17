@@ -252,7 +252,11 @@ public final class inicio extends javax.swing.JFrame {
         usus.setUsuario(iniusu.getText());
         usus.setContrasenia(new String(inipas.getPassword()));
         usus.setUltima_secion(now);
-        usus.setTurnoPresente(ultimoTurno.getIdTurno());
+        
+        // Solo asignar turno si existe
+        if (ultimoTurno != null) {
+            usus.setTurnoPresente(ultimoTurno.getIdTurno());
+        }
 
         UsuarioOperando usuarioLogin = sql.login(usus);
         boolean registroExitoso = false;
@@ -306,7 +310,7 @@ public final class inicio extends javax.swing.JFrame {
         }
     }
 
-    @SuppressWarnings("unchecked")
+    //@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

@@ -36,11 +36,13 @@ public class MensajesWATest2 {
     public void iniciarDriver() {
         if (driver == null) {
             try {
-                System.out.println("[WA] Configurando WebDriverManager...");
+                System.out.println("[WA-INIT] Configurando WebDriverManager...");
+                // WebDriverManager se actualiza automáticamente con cada nueva versión de Chrome
                 WebDriverManager.chromedriver().setup();
-
+                
+                String userDataDir = localPath + "\\chromeWA";
                 ChromeOptions optionsGoo = new ChromeOptions();
-                // Opciones para mejorar rendimiento
+                // Opciones para mejorar rendimiento y evitar conflictos
                 optionsGoo.addArguments(
                     "--no-sandbox",
                     "--disable-notifications",
@@ -49,22 +51,43 @@ public class MensajesWATest2 {
                     "--disable-extensions",
                     "--disable-popup-blocking",
                     "--start-maximized",
-                    "--user-data-dir=" + localPath + "\\chromeWA"
+                    "--remote-debugging-port=0",  // Puerto dinámico para evitar conflictos
+                    "--user-data-dir=" + userDataDir
                 );
                 // Silenciar logs innecesarios
                 optionsGoo.addArguments("--log-level=3");
                 optionsGoo.setExperimentalOption("excludeSwitches", new String[]{"enable-logging"});
 
-                System.out.println("[WA] Iniciando Chrome...");
+                System.out.println("[WA-INIT] Iniciando Chrome...");
                 driver = new ChromeDriver(optionsGoo);
+                System.out.println("[WA-INIT] ✓ Driver iniciado correctamente");
                 
                 // Enviar ventana al fondo
                 enviarVentanaAlFondo();
-                
-                System.out.println("[WA] Chrome iniciado correctamente");
 
+            } catch (org.openqa.selenium.SessionNotCreatedException e) {
+                System.err.println("[WA-INIT] ❌ Error SessionNotCreatedException: " + e.getMessage());
+                System.err.println("[WA-INIT] Posible causa: Chrome ya está en uso o archivos bloqueados");
+                limpiarRecursos();
+                throw new RuntimeException("No se pudo iniciar Chrome para WhatsApp. Cierra todas las ventanas de Chrome e intenta nuevamente.", e);
             } catch (Exception e) {
-                System.out.println("[WA] ERROR al iniciar WebDriver: " + e.getMessage());
+                System.err.println("[WA-INIT] ❌ Error inesperado: " + e.getClass().getSimpleName());
+                System.err.println("[WA-INIT] Mensaje: " + e.getMessage());
+                limpiarRecursos();
+                throw new RuntimeException("Error al inicializar Chrome para WhatsApp: " + e.getMessage(), e);
+            }
+        }
+    }
+    
+    private void limpiarRecursos() {
+        if (driver != null) {
+            try {
+                driver.quit();
+            } catch (Exception e) {
+                // Ignorar errores al cerrar
+            } finally {
+                driver = null;
+                yaCodificado = false;
             }
         }
     }
@@ -107,7 +130,7 @@ public class MensajesWATest2 {
             driver.get(url);
             
             // Esperar a que cargue la página (máximo 15 segundos)
-            WebDriverWait waitCorto = new WebDriverWait(driver, Duration.ofSeconds(15));
+            //WebDriverWait waitCorto = new WebDriverWait(driver, Duration.ofSeconds(15));
             
             // Verificar si aparece QR (sesión no iniciada)
             System.out.println("[WA] Verificando estado de sesión...");
@@ -259,10 +282,11 @@ public class MensajesWATest2 {
     public void cerrarDriver() {
         if (driver != null) {
             try {
-                System.out.println("[WA] Cerrando navegador...");
+                System.out.println("[WA] Cerrando navegador y liberando recursos...");
                 driver.quit();
+                System.out.println("[WA] ✓ Navegador cerrado correctamente");
             } catch (Exception e) {
-                System.out.println("[WA] Error al cerrar: " + e.getMessage());
+                System.err.println("[WA] ⚠ Error al cerrar driver: " + e.getMessage());
             } finally {
                 driver = null;
                 yaCodificado = false;

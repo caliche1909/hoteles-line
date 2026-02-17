@@ -182,7 +182,7 @@ public class FrmRegistrarUsuarios extends javax.swing.JDialog {
 
     }
 
-    @SuppressWarnings("unchecked")
+    //@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -669,7 +669,7 @@ public class FrmRegistrarUsuarios extends javax.swing.JDialog {
                 regisunom.requestFocus();
             } else {
                 if (hotel == null) {
-                    JOptionPane.showMessageDialog(this, "El 'ID HOTEL' ingresado NO EXISTE!");
+                    JOptionPane.showMessageDialog(this, "El 'IDENTIFICADOR' ingresado NO EXISTE!");
                     txtIdHotel.setText("");
                     txtIdHotel.requestFocus();
                     return;

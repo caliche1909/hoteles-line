@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="PRAGMA" content="NO-CACHE" />
+<meta http-equiv="EXPIRES" content="-1" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE, NO-STORE, MAX-AGE=0, MUST-REVALIDATE" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+<title>SIRE - Sistema De Informaci&oacute;n Para El Reporte De
+	Extranjeros</title>
+<link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/basic_both.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/extended_both.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" media="rich-extended-skinning" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.AjaxScript.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.PrototypeScript.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/utils.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/browser_info.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/modalPanel.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/modalPanelBorders.js.jsf" type="text/javascript"></script><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/modalPanel.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg/ajax4jsf/javascript/scripts/form.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/form.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/panelMenu.js.jsf" type="text/javascript"></script><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/panelMenu.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/s/3_3_3.Finalcss/panel.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/css/msg.css.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/css/msgs.css.jsf" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/available.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/jquery/jquery.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/script/controlUtils.js.jsf" type="text/javascript"></script><script type="text/javascript">window.RICH_FACES_EXTENDED_SKINNING_ON=true;</script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/skinning.js.jsf" type="text/javascript"></script><link rel="shortcut icon" href="/sire/imagenes/sifdas-icon.ico" />
+<link href="/sire/css/general.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/sire/js/util.js"></script>
+<link href="../../css/general.css" rel="stylesheet" type="text/css" media="all" />
+
+<script type="text/javascript">
+		//<![CDATA[
+			A4J.AJAX.onError = function(req, status, message) {
+		        window.location.reload();
+			}
+		//]]>
+		</script>
+	</head>
+
+	<body onload="showMessagesPanel();"><span id="j_id4"><span id="queuedMessages" class="invisible">false</span></span>
+		<center>
+			<div id="mainPanel" class="mainPanel">
+				<table width="100%" cellpadding="0" cellspacing="0" class="mainTable" border="0">
+					<tr>
+						<td class="headerExterna" colspan="2" height="155px">
+<form id="formHeader2" name="formHeader2" method="post" action="/sire/pages/home.jsf" enctype="application/x-www-form-urlencoded" style="margin: 0px;">
+<input type="hidden" name="formHeader2" value="formHeader2" />
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><span id="formHeader2:j_id9"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+						<image src="/sire/imagenes/cabezotes/Banner-Home.jpg" style="width:100%;height:150px;left: 10%;top: 2%;z-index: 1;"/></td>
+</tr>
+</tbody>
+</table>
+</span></td>
+</tr>
+<tr>
+<td><table class="header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col90"><table class="header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col35"><table cellpadding="0" cellspacing="0" style="margin-left: 5px;" width="100%">
+<tbody>
+<tr>
+<td class="col20"><span class="subtitulo3">Nombre:</span></td>
+<td class="col80"><span class="subtitulo4">IRMA VICTORIA VILLACREZ ORDO&Ntilde;EZ</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col35"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col30"><span class="subtitulo3">Num. Documento:</span></td>
+<td class="col70"><span class="subtitulo4">59822999</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col30"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col30"><span class="subtitulo3">E-mail:</span></td>
+<td class="col70"><span class="subtitulo4">hoteldoralplaza@gmail.com</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="col35"><table cellpadding="0" cellspacing="0" style="margin-left: 5px;" width="100%">
+<tbody>
+<tr>
+<td class="col20"><span class="subtitulo3">Empresa:</span></td>
+<td class="col80"><span class="subtitulo4">HOTEL DORAL PLAZA</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col35"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col30"><span class="subtitulo3">&Uacute;ltimo Acceso:</span></td>
+<td class="col70"><span class="subtitulo4">26/01/2026 08:09 PM</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col10"><table width="100%">
+<tbody>
+<tr>
+<td><input type="image" src="/sire/imagenes/boton-home.png" name="formHeader2:j_id31" alt="Inicio" title="Inicio" /></td>
+<td><input type="image" src="/sire/imagenes/boton-contra.png" name="formHeader2:j_id32" alt="Cambiar Contrase&ntilde;a" title="Cambiar Contrase&ntilde;a" /></td>
+<td><input type="image" src="/sire/imagenes/boton-exit.png" name="formHeader2:j_id33" alt="Salir" title="Salir" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2" />
+</form><span id="_viewRoot:status"><span id="_viewRoot:status.start" style="display: none"></span><script type="text/javascript">
+window.document.getElementById('_viewRoot:status.start').onstart=function(){document.getElementById('waitPanel').component.show('',{top:'350px', left:'650px',height:'20px', width:'20px'});;};
+</script><span id="_viewRoot:status.stop"></span><script type="text/javascript">
+window.document.getElementById('_viewRoot:status.stop').onstop=function(){document.getElementById('waitPanel').component.hide();addSeleccioneToCheckbox();;};
+</script></span><div id="waitPanel" style="display: none;"><input autocomplete="off" id="waitPanelOpenedState" name="waitPanelOpenedState" type="hidden" /><div class="rich-modalpanel " id="waitPanelContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="waitPanelDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="waitPanelFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="waitPanelCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="waitPanelShadowDiv"></div><div class=" rich-mpnl-content" id="waitPanelContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="waitPanelContentTable" style="width: 1px;height: 1px;"><tr style="height: 99%"><td class="rich-mpnl-body" valign="top"><table cellspacing="2" width="100%">
+<tbody>
+<tr>
+<td><img src="/sire/imagenes/loading.gif" class="pic" /></td>
+</tr>
+</tbody>
+</table>
+</td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="waitPanelCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="waitPanelLastHref"></button></div><script type="text/javascript">new ModalPanel('waitPanel',
+				{
+					width: -1,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div></td>
+					</tr>
+					<tr>
+						<td width="233px" height="100%" bgcolor="#F3F2F2" style="vertical-align: top;">
+							<div class="menuPanel"><span style="margin: 0px;">
+
+		<center><form id="panelMenu:_form" name="panelMenu:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sire/pages/home.jsf"><div class="rich-pmenu " id="panelMenu" style="width:98%; "><div class="rich-pmenu-top-group-div" id="groupEmpresas"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-top-group  rich-pmenu-group   " id="tablehidegroupEmpresas" style="; "><tbody><tr id="row_groupEmpresas"><td class="rich-pmenu-nowrap rich-pmenu-group-self-icon rich-pmenu-top-group-self-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAH7!!8!AAX9Av4_.jsf" alt="" width="16" height="16" id="leftIcongroupEmpresas" /></td><td class="rich-pmenu-group-self-label rich-pmenu-group-self-label rich-pmenu-top-group-self-label" id="icongroupEmpresas" style="width:100%"><input autocomplete="off" name="panelMenuStategroupEmpresas" type="hidden" /><input autocomplete="off" name="panelMenuActiongroupEmpresas" type="hidden" />SIRE</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAH7!!8!AAX9Av4_.jsf" alt="" width="16" height="16" id="rightIcongroupEmpresas" /></td></tr></tbody></table><div id="itemCargarInformacion"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemCargarInformacion"><tbody><tr id="row_itemCargarInformacion"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemCargarInformacion" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemCargarInformacion" style="width:100%"><input autocomplete="off" name="panelMenuActionitemCargarInformacion" type="hidden" />Cargar Informaci&oacute;n</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemCargarInformacion" /></td></tr></tbody></table></div><div id="itemConsultarCargaInformacion"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemConsultarCargaInformacion"><tbody><tr id="row_itemConsultarCargaInformacion"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemConsultarCargaInformacion" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemConsultarCargaInformacion" style="width:100%"><input autocomplete="off" name="panelMenuActionitemConsultarCargaInformacion" type="hidden" />Consultar Carga de Informaci&oacute;n</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemConsultarCargaInformacion" /></td></tr></tbody></table></div><div id="itemConsultarExtranjeros"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemConsultarExtranjeros"><tbody><tr id="row_itemConsultarExtranjeros"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemConsultarExtranjeros" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemConsultarExtranjeros" style="width:100%"><input autocomplete="off" name="panelMenuActionitemConsultarExtranjeros" type="hidden" />Consultar Extranjeros</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemConsultarExtranjeros" /></td></tr></tbody></table></div><div id="itemActualizarDatosEmpresa"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemActualizarDatosEmpresa"><tbody><tr id="row_itemActualizarDatosEmpresa"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemActualizarDatosEmpresa" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemActualizarDatosEmpresa" style="width:100%"><input autocomplete="off" name="panelMenuActionitemActualizarDatosEmpresa" type="hidden" />Actualizar Datos Persona Jur&iacute;dica</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemActualizarDatosEmpresa" /></td></tr></tbody></table></div><div id="itemDescargaFormatoEmpresa"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemDescargaFormatoEmpresa"><tbody><tr id="row_itemDescargaFormatoEmpresa"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemDescargaFormatoEmpresa" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemDescargaFormatoEmpresa" style="width:100%"><input autocomplete="off" name="panelMenuActionitemDescargaFormatoEmpresa" type="hidden" />Descargar Manual de Uso</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemDescargaFormatoEmpresa" /></td></tr></tbody></table></div><div id="itemVinculaCuenta"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemVinculaCuenta"><tbody><tr id="row_itemVinculaCuenta"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemVinculaCuenta" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemVinculaCuenta" style="width:100%"><input autocomplete="off" name="panelMenuActionitemVinculaCuenta" type="hidden" />Vincular Cuenta</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemVinculaCuenta" /></td></tr></tbody></table></div></div><input autocomplete="off" id="panelMenuselectedItemName" name="panelMenuselectedItemName" type="hidden" /><div style="display:none"><script id="scriptpanelMenu" type="text/javascript">var ids = new PanelMenu('panelMenu',false).getIds();
+var params = new Object();new PanelMenuItem(ids, params,{myId:'groupEmpresas',parentId:'panelMenu'},{type:"node",onopen:";",onclose:";",event:"click",mode:"none",target:"",disabled:false,target:"",name:"groupEmpresas"},{},new Array("rich-pmenu-hovered-element"),0,true,false,true,"A4J.AJAX.Submit(null,event,{'control':this,'similarityGroupingId':'groupEmpresas','parameters':{'ajaxSingle':'groupEmpresas','groupEmpresas':'groupEmpresas'} ,'actionUrl':'/sire/pages/home.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAH7!!8!AAX9Av4_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAH7!!8!AAX9Av4_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAH7!!8!AAX9Av4_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemCargarInformacion',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemCargarInformacion"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemCargarInformacion','parameters':{'ajaxSingle':'itemCargarInformacion','itemCargarInformacion':'itemCargarInformacion'} ,'actionUrl':'/sire/pages/home.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemConsultarCargaInformacion',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemConsultarCargaInformacion"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemConsultarCargaInformacion','parameters':{'ajaxSingle':'itemConsultarCargaInformacion','itemConsultarCargaInformacion':'itemConsultarCargaInformacion'} ,'actionUrl':'/sire/pages/home.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemConsultarExtranjeros',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemConsultarExtranjeros"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemConsultarExtranjeros','parameters':{'itemConsultarExtranjeros':'itemConsultarExtranjeros','ajaxSingle':'itemConsultarExtranjeros'} ,'actionUrl':'/sire/pages/home.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemActualizarDatosEmpresa',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemActualizarDatosEmpresa"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemActualizarDatosEmpresa','parameters':{'itemActualizarDatosEmpresa':'itemActualizarDatosEmpresa','ajaxSingle':'itemActualizarDatosEmpresa'} ,'actionUrl':'/sire/pages/home.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemDescargaFormatoEmpresa',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemDescargaFormatoEmpresa"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemDescargaFormatoEmpresa','parameters':{'ajaxSingle':'itemDescargaFormatoEmpresa','itemDescargaFormatoEmpresa':'itemDescargaFormatoEmpresa'} ,'actionUrl':'/sire/pages/home.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemVinculaCuenta',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemVinculaCuenta"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemVinculaCuenta','parameters':{'itemVinculaCuenta':'itemVinculaCuenta','ajaxSingle':'itemVinculaCuenta'} ,'actionUrl':'/sire/pages/home.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+</script></div></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2" /></form>
+		</center></span>
+							</div>
+						</td>
+						<td width="77%" height="100%" style="vertical-align: top;">
+							<div class="contentPanel">
+<form id="formHome" name="formHome" method="post" action="/sire/pages/home.jsf" enctype="application/x-www-form-urlencoded" style="margin: 0px;">
+<input type="hidden" name="formHome" value="formHome" />
+
+			<div class="homePanel"><table border="0" cellpadding="0" cellspacing="0" style="vertical-align:top; margin-left: 10px;" width="100%">
+<tbody>
+<tr>
+<td class="col50"><img alt="" class="rich-spacer " height="70px;" id="formHome:j_id44" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" width="1" />
+						<center><span class="notaGrandeGris">Bienvenido </span><span class="notaGrandeGris">IRMA VICTORIA VILLACREZ ORDO&Ntilde;EZ</span>
+						</center>
+						<br />
+						<br />
+						<br /></td>
+</tr>
+</tbody>
+</table>
+
+			</div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2" />
+</form>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="headerExterna" colspan="2" style="vertical-align: top;"><table id="footer" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+			<image src="/sire/imagenes/Copyright.jpg" style="position:absolute; top:0; left:0; width:100%; height:auto; z-index:0;"/></td>
+</tr>
+</tbody>
+</table>
+
+							</td>
+					</tr>
+				</table>
+<form id="messagesForm" name="messagesForm" method="post" action="/sire/pages/home.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="messagesForm" value="messagesForm" />
+<div id="messagesForm:messagesPanel" style="display: none;"><input autocomplete="off" id="messagesForm:messagesPanelOpenedState" name="messagesForm:messagesPanelOpenedState" type="hidden" /><div class="rich-modalpanel " id="messagesForm:messagesPanelContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="messagesForm:messagesPanelDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="messagesForm:messagesPanelFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="messagesForm:messagesPanelCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="messagesForm:messagesPanelShadowDiv"></div><div class=" rich-mpnl-content" id="messagesForm:messagesPanelContentDiv"><div class="rich-mpnl-text rich-mpnl-controls "><img id="messagesForm:hidelinkMessages" src="/sire/imagenes/modal/close.png" class="hidelink" /><script type="text/javascript">Richfaces.componentControl.attachAvailable('#messagesForm\\:hidelinkMessages','onclick','#messagesForm\\:messagesPanel','hide')</script></div><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="messagesForm:messagesPanelContentTable" style="width: 430px;height: 200px;"><tr style="height: 99%"><td class="rich-mpnl-body" valign="top"><span id="messagesForm:j_id54"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+						<image src="/sire/imagenes/cabezotes/Banner_pop_up.jpg" style="width:100%;height:70px;left: 10%;top: 2%;z-index: 1;"/></td>
+</tr>
+</tbody>
+</table>
+</span><div class="rich-panel messagesPanel" id="messagesForm:j_id59"><div class="rich-panel-body " id="messagesForm:j_id59_body"><dl id="messagesForm:j_id60" class="rich-messages" style="display: none; "><dt></dt></dl></div></div>
+			<br />
+			<center><input id="messagesForm:messagesButton" type="submit" name="messagesForm:messagesButton" value="Aceptar" onclick="document.getElementById('messagesForm:messagesPanel').component.hide(); return false;" class="boton" />
+			</center></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="messagesForm:messagesPanelCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="messagesForm:messagesPanelLastHref"></button></div><script type="text/javascript">new ModalPanel('messagesForm:messagesPanel',
+				{
+					width: 430,
+					height: 200,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2" />
+</form>
+			</div>
+		</center>
+
+	</body>
+</html>

@@ -16,7 +16,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -50,9 +49,6 @@ import modelo.Habitaciones;
 import modelo.Hotel;
 import modelo.ReporteSire;
 import modelo.UsuarioOperando;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public final class Recepciones extends javax.swing.JFrame {
 
@@ -390,11 +386,16 @@ public final class Recepciones extends javax.swing.JFrame {
                     datosReporte.setNombres(datosRegistro[0] != null ? datosRegistro[0] : "");
                     String apellidos = datosRegistro[1] != null ? datosRegistro[1] : "";
                     String[] partesApellidos = apellidos.split(" ");
+                    
+                    // Inicializar ambos apellidos como vacíos por defecto
+                    datosReporte.setPrimerApeliido("");
+                    datosReporte.setSegundoApellido("");
+                    
                     if (!apellidos.equals("")) {
-                        if (partesApellidos.length == 1) {
+                        if (partesApellidos.length >= 1) {
                             datosReporte.setPrimerApeliido(partesApellidos[0]);
-                        } else if (partesApellidos.length == 2) {
-                            datosReporte.setPrimerApeliido(partesApellidos[0]);
+                        }
+                        if (partesApellidos.length >= 2) {
                             datosReporte.setSegundoApellido(partesApellidos[1]);
                         }
                     }
@@ -662,101 +663,223 @@ public final class Recepciones extends javax.swing.JFrame {
         }
     };
 
-    public void registroSireSalida() {
+    /**
+     * Gestiona el reporte SIRE de salida para huéspedes extranjeros.
+     * Este método es SÍNCRONO cuando se usa para liberación de habitación:
+     * espera a que el formulario SIRE se complete antes de retornar.
+     * 
+     * @param bloquearHastaCompletar si es true, espera a que SIRE termine antes de retornar
+     * @return true si el formulario SIRE se completó exitosamente, false si falló o el usuario canceló
+     */
+    public boolean registroSireSalida(boolean bloquearHastaCompletar) {
         String tipoMov = "Salida";
+       
+        String nacionalidadDisplay = datosReporte.getNacionalidad() != null 
+            ? datosReporte.getNacionalidad().replaceAll("\\s*\\(.*\\)$", "").trim() 
+            : "extranjera";
 
         String[] opciones = {"GESTIONAR", "CANCELAR"};
         int seleccion = JOptionPane.showOptionDialog(
                 null,
-                "Confirme si desea hacer el reporte de " + tipoMov + ",\nal sistema SIRE de migracion colombia.",
-                "Seleccione una opción",
+                "La habitación que desea liberar tiene un huésped\n"
+                + "de nacionalidad " + nacionalidadDisplay + " que fue reportado\n"
+                + "al sistema SIRE de Migración Colombia.\n\n"
+                + "Para cumplir con la normativa, es necesario registrar\n"
+                + "la salida del huésped en el SIRE antes de liberar\n"
+                + "la habitación.\n\n"
+                + "¿Desea gestionar el reporte de salida ahora?",
+                "Reporte SIRE de Salida",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 icon,
                 opciones,
                 opciones[0]
         );
-        switch (seleccion) {
-            case 0: // Reportar
-                LocalDate fecha = LocalDate.now();
-                DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/M/yyyy");
-                String fechaMov = fecha.format(formato);
-                String tipoDoc = datosReporte.getTipoDocumento();
-                String fechaNacimiento = datosReporte.getFechaNacimiento();
-                String numDoc = datosReporte.getNumDocumento();
-                String primerApe = datosReporte.getPrimerApeliido();
-                String segApe = datosReporte.getSegundoApellido();
-                String nombres = datosReporte.getNombres();
-                String nacionalidad = datosReporte.getNacionalidad().replaceAll("\\s*\\(.*\\)$", "").trim();
-                String paisProce = datosReporte.getPaisProce();
-                String deparProce = datosReporte.getDeparProce();
-                String ciudadProce = datosReporte.getCiudadProce();
-                String paisDest = datosReporte.getPaisDest();
-                String deparDest = datosReporte.getDeparDet();
-                String ciudadDest = datosReporte.getCiudadDest();
+        
+        if (seleccion != 0) {
+            // Usuario canceló o cerró el diálogo
+            System.out.println("[SIRE-SALIDA] Usuario canceló el reporte SIRE de salida");
+            return !bloquearHastaCompletar; // Si estamos bloqueando, retornar false (no puede liberar sin SIRE)
+        }
+        
+        // Preparar datos del reporte
+        LocalDate fecha = LocalDate.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/M/yyyy");
+        String fechaMov = fecha.format(formato);
+        String tipoDoc = datosReporte.getTipoDocumento();
+        String fechaNacimiento = datosReporte.getFechaNacimiento();
+        String numDoc = datosReporte.getNumDocumento();
+        String primerApe = datosReporte.getPrimerApeliido();
+        String segApe = datosReporte.getSegundoApellido();
+        String nombres = datosReporte.getNombres();
+        String nacionalidad = datosReporte.getNacionalidad().replaceAll("\\s*\\(.*\\)$", "").trim();
+        String paisProce = datosReporte.getPaisProce();
+        String deparProce = datosReporte.getDeparProce();
+        String ciudadProce = datosReporte.getCiudadProce();
+        String paisDest = datosReporte.getPaisDest();
+        String deparDest = datosReporte.getDeparDet();
+        String ciudadDest = datosReporte.getCiudadDest();
 
-                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
-                    @Override
-                    protected Void doInBackground() throws Exception {
-
+        if (bloquearHastaCompletar) {
+            // MODO BLOQUEANTE: Ejecutar SIRE y esperar resultado antes de liberar habitación
+            System.out.println("[SIRE-SALIDA] Modo bloqueante: ejecutando reporte SIRE de salida...");
+            
+            SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
+                @Override
+                protected Boolean doInBackground() {
+                    try {
                         ReporteSire reporte = new ReporteSire(tipoMov, fechaMov, tipoDoc, fechaNacimiento, numDoc, primerApe, segApe,
                                 nombres, nacionalidad, paisProce, deparProce, ciudadProce, paisDest, deparDest, ciudadDest);
-
-                        reporte.abrirPagina();
-                        return null;
+                        return reporte.abrirPagina();
+                    } catch (Exception e) {
+                        System.err.println("[SIRE-SALIDA] ❌ Error en reporte SIRE: " + e.getMessage());
+                        e.printStackTrace();
+                        return false;
                     }
+                }
 
-                    @Override
-                    protected void done() {
-                        try {
-                            get();
-                        } catch (InterruptedException | ExecutionException ex) {
-                            // Manejar el error aquí. Podrías mostrar un diálogo con el error, por ejemplo.
-                            JOptionPane.showMessageDialog(null, """
-                                                                Error al gestionar el reporte de salida en SIRE,
-                                                                por favor hagalo manualmente""");
-
-                            ThermalPrinter thermalPrinter = new ThermalPrinter();
-                            String clientInfo = String.format("""
-                                                              Tipo Movimiento   : %s  
-                                                              Fecha Movimiento  : %s
-                                                              Tipo Documento    : %s
-                                                              Fecha Nacimiento  : %s
-                                                              Numero Documento  : %s 
-                                                              Primer apellido   : %s
-                                                              Segundo Apellido  : %s
-                                                              Nombres           : %s
-                                                              Nacionalidad      : %s
-                                                              Pais Procedencia  : %s
-                                                              Depto procedencia : %s
-                                                              Ciudad Procedencia: %s
-                                                              Pais destino      : %s
-                                                              Depto destino     : %s
-                                                              Ciudad Destino    : %s
-                                                              """,
-                                    tipoMov, fechaMov, tipoDoc, fechaNacimiento, numDoc, primerApe, segApe, nombres, nacionalidad,
-                                    paisProce, deparProce, ciudadProce, paisDest, deparDest, ciudadDest);
-                            List<String[]> productList = new ArrayList<>();
-                            String nuevoPDF = thermalPrinter.createPDF(clientInfo, productList, "SIRE_" + nombres + "_" + primerApe);
-                            thermalPrinter.printPDF(nuevoPDF);
+                @Override
+                protected void done() {
+                    try {
+                        boolean resultado = get();
+                        if (!resultado) {
+                            manejarErrorSireSalida(tipoMov, fechaMov, tipoDoc, fechaNacimiento, numDoc, 
+                                primerApe, segApe, nombres, nacionalidad, paisProce, deparProce, 
+                                ciudadProce, paisDest, deparDest, ciudadDest);
                         }
+                    } catch (InterruptedException | ExecutionException ex) {
+                        manejarErrorSireSalida(tipoMov, fechaMov, tipoDoc, fechaNacimiento, numDoc, 
+                            primerApe, segApe, nombres, nacionalidad, paisProce, deparProce, 
+                            ciudadProce, paisDest, deparDest, ciudadDest);
                     }
-                };
+                }
+            };
+            
+            worker.execute();
+            
+            // Esperar a que el SwingWorker termine y obtener el resultado
+            try {
+                boolean resultado = worker.get(); // BLOQUEA hasta que SIRE termine
+                System.out.println("[SIRE-SALIDA] Resultado del reporte: " + resultado);
+                return resultado;
+            } catch (InterruptedException | ExecutionException ex) {
+                System.err.println("[SIRE-SALIDA] ❌ Error esperando resultado SIRE: " + ex.getMessage());
+                return false;
+            }
+            
+        } else {
+            // MODO NO BLOQUEANTE: Ejecutar SIRE en segundo plano (comportamiento original)
+            System.out.println("[SIRE-SALIDA] Modo no bloqueante: ejecutando reporte SIRE en segundo plano...");
+            
+            SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+                @Override
+                protected Void doInBackground() throws Exception {
+                    ReporteSire reporte = new ReporteSire(tipoMov, fechaMov, tipoDoc, fechaNacimiento, numDoc, primerApe, segApe,
+                            nombres, nacionalidad, paisProce, deparProce, ciudadProce, paisDest, deparDest, ciudadDest);
+                    reporte.abrirPagina();
+                    return null;
+                }
 
-                worker.execute();
+                @Override
+                protected void done() {
+                    try {
+                        get();
+                    } catch (InterruptedException | ExecutionException ex) {
+                        manejarErrorSireSalida(tipoMov, fechaMov, tipoDoc, fechaNacimiento, numDoc, 
+                            primerApe, segApe, nombres, nacionalidad, paisProce, deparProce, 
+                            ciudadProce, paisDest, deparDest, ciudadDest);
+                    }
+                }
+            };
+            worker.execute();
+            return true;
+        }
+    }
+    
+    /**
+     * Método de compatibilidad: ejecuta el reporte SIRE en modo NO bloqueante (comportamiento original)
+     */
+    public void registroSireSalida() {
+        registroSireSalida(false);
+    }
+    
+    /**
+     * Maneja errores en el reporte SIRE de salida: muestra mensaje e imprime datos para reporte manual
+     */
+    private void manejarErrorSireSalida(String tipoMov, String fechaMov, String tipoDoc, String fechaNacimiento,
+            String numDoc, String primerApe, String segApe, String nombres, String nacionalidad,
+            String paisProce, String deparProce, String ciudadProce, String paisDest, String deparDest, String ciudadDest) {
+        JOptionPane.showMessageDialog(null, """
+                                            Error al gestionar el reporte de salida en SIRE,
+                                            por favor hagalo manualmente""");
+        ThermalPrinter thermalPrinter = new ThermalPrinter();
+        String clientInfo = String.format("""
+                                          Tipo Movimiento   : %s  
+                                          Fecha Movimiento  : %s
+                                          Tipo Documento    : %s
+                                          Fecha Nacimiento  : %s
+                                          Numero Documento  : %s 
+                                          Primer apellido   : %s
+                                          Segundo Apellido  : %s
+                                          Nombres           : %s
+                                          Nacionalidad      : %s
+                                          Pais Procedencia  : %s
+                                          Depto procedencia : %s
+                                          Ciudad Procedencia: %s
+                                          Pais destino      : %s
+                                          Depto destino     : %s
+                                          Ciudad Destino    : %s
+                                          """,
+                tipoMov, fechaMov, tipoDoc, fechaNacimiento, numDoc, primerApe, segApe, nombres, nacionalidad,
+                paisProce, deparProce, ciudadProce, paisDest, deparDest, ciudadDest);
+        List<String[]> productList = new ArrayList<>();
+        String nuevoPDF = thermalPrinter.createPDF(clientInfo, productList, "SIRE_" + nombres + "_" + primerApe);
+        thermalPrinter.printPDF(nuevoPDF);
+    }
 
-                break;
-            case 1: // cancelar
-
-                break;
-
-            default:
-                // El usuario cerró el JOptionPane sin seleccionar ninguna opción
-                break;
+    /**
+     * Libera la habitación en la BD y actualiza visualmente el botón a estado "Libre" (verde)
+     */
+    private void liberarHabitacionVisualmente(int numeroHabitacion, JButton botonHabitacion) {
+        if (con.liberarHabitacion(numeroHabitacion, idHotel)) {
+            System.out.println("[LIBERAR-HAB] ✓ Habitación " + numeroHabitacion + " liberada exitosamente en BD");
+            botonHabitacion.setBackground(new Color(0, 153, 0));
+            CompoundBorder compoundBorder = (CompoundBorder) botonHabitacion.getBorder();
+            TitledBorder topBorder = (TitledBorder) compoundBorder.getOutsideBorder();
+            TitledBorder bottomBorder = (TitledBorder) compoundBorder.getInsideBorder();
+            topBorder.setTitle("Libre");
+            topBorder.setTitleColor(new Color(0, 51, 51));
+            bottomBorder.setTitleColor(new Color(0, 51, 51));
+            botonHabitacion.repaint();
+        } else {
+            System.out.println("[LIBERAR-HAB] ❌ No se pudo liberar la habitación " + numeroHabitacion + " en BD");
+            JOptionPane.showMessageDialog(null, "No se pudo liberar la habitación. Intente nuevamente.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     private void toggleHabitacion(int numeroHabitacion, JButton botonHabitacion) {
+        // ===== VERIFICACIÓN CRÍTICA: Revisar si hay ventana SIRE abierta =====
+        // Esto DEBE hacerse ANTES de mostrar cualquier opción al usuario
+        System.out.println("[RECEPCION] toggleHabitacion() - Verificando estado SIRE...");
+        if (ReporteSire.hayVentanaAbierta()) {
+            System.out.println("[RECEPCION] ⚠ Ventana SIRE abierta detectada - Bloqueando acceso");
+            JOptionPane.showMessageDialog(this,
+                "⚠ REGISTRO SIRE PENDIENTE\n\n" +
+                "Hay un reporte SIRE en proceso que debe completarse primero.\n\n" +
+                "Por favor:\n" +
+                "1. Complete el formulario SIRE abierto\n" +
+                "2. Haga clic en 'AGREGAR REGISTRO'\n" +
+                "3. Cierre la ventana del navegador\n" +
+                "4. Intente nuevamente",
+                "Operación Bloqueada",
+                JOptionPane.WARNING_MESSAGE);
+            
+            // Maximizar y traer al frente la ventana SIRE pendiente
+            ReporteSire.maximizarVentanaPendiente();
+            return; // DETENER - No mostrar el panel de opciones
+        }
+        System.out.println("[RECEPCION] ✓ No hay ventana SIRE abierta, mostrando opciones...");
+        
         String[] opciones = {"REGISTRAR", "RESERVAR", "CANCELAR"};
         String[] concluirReserva = {"REGISTRAR  RESERVA", "ANULAR  RESERVAR", "CANCELAR"};
         if (botonHabitacion.getBackground().equals(new Color(0, 153, 0))) {//color verde
@@ -872,31 +995,94 @@ public final class Recepciones extends javax.swing.JFrame {
 
                 if (fechaSeleccionada.compareTo(fechaActual) < 0) {
                     JOptionPane.showMessageDialog(null, "Operación incorrecta. La fecha seleccionada es menor a la actual", "Error", JOptionPane.ERROR_MESSAGE);
-                } else {
+                    return;
+                }
 
+                // Verificar si hay una ventana de reporte SIRE abierta de un proceso anterior
+                if (ReporteSire.hayVentanaAbierta()) {
+                    System.out.println("[LIBERAR-HAB] ⚠ Intentó liberar con ventana SIRE abierta");
+                    JOptionPane.showMessageDialog(null,
+                        "⚠ REGISTRO SIRE PENDIENTE\n\n" +
+                        "No se puede liberar esta habitación hasta que\n" +
+                        "complete el reporte SIRE anterior.\n\n" +
+                        "Por favor:\n" +
+                        "1. Complete el formulario SIRE que está abierto\n" +
+                        "2. Haga clic en 'AGREGAR REGISTRO'\n" +
+                        "3. Cierre la ventana del navegador\n" +
+                        "4. Intente nuevamente liberar la habitación",
+                        "Registro SIRE Pendiente",
+                        JOptionPane.WARNING_MESSAGE);
+                    ReporteSire.maximizarVentanaPendiente();
+                    return;
+                }
+
+                // Verificar si el huésped es extranjero (requiere reporte SIRE de salida)
+                String nacionalidadHuesped = datosReporte.getNacionalidad() != null 
+                    ? datosReporte.getNacionalidad().replaceAll("\\s*\\(.*\\)$", "").trim() 
+                    : "COLOMBIA";
+                boolean esExtranjero = !nacionalidadHuesped.equals("COLOMBIA");
+                
+                System.out.println("[LIBERAR-HAB] Nacionalidad: " + nacionalidadHuesped + " | Extranjero: " + esExtranjero);
+                
+                if (esExtranjero) {
+                    // ===== FLUJO PARA EXTRANJEROS: SIRE PRIMERO, LIBERAR DESPUÉS =====
+                    System.out.println("[LIBERAR-HAB] Huésped extranjero - Iniciando reporte SIRE de salida ANTES de liberar");
+                    
+                    // Cerrar el diálogo de opciones
                     Window win = SwingUtilities.getWindowAncestor(liberarButton);
                     if (win != null) {
                         win.dispose();
                     }
-                    String tipodoc = datosReporte.getTipoDocumento();
-                    if (!tipodoc.equals("CÉDULA DE CIUDADANÍA")) {
-                        registroSireSalida();
+                    
+                    // Ejecutar SIRE en un SwingWorker para no bloquear la UI
+                    SwingWorker<Boolean, Void> sireWorker = new SwingWorker<Boolean, Void>() {
+                        @Override
+                        protected Boolean doInBackground() {
+                            // registroSireSalida(true) es BLOQUEANTE: espera resultado de SIRE
+                            return registroSireSalida(true);
+                        }
+                        
+                        @Override
+                        protected void done() {
+                            try {
+                                boolean sireExitoso = get();
+                                System.out.println("[LIBERAR-HAB] Resultado SIRE de salida: " + sireExitoso);
+                                
+                                if (sireExitoso) {
+                                    // SIRE completado exitosamente → Ahora sí liberar la habitación
+                                    System.out.println("[LIBERAR-HAB] ✓ SIRE completado - Procediendo a liberar habitación " + numeroHabitacion);
+                                    liberarHabitacionVisualmente(numeroHabitacion, botonHabitacion);
+                                } else {
+                                    // SIRE falló o fue cancelado → NO liberar
+                                    System.out.println("[LIBERAR-HAB] ⚠ SIRE no completado - Habitación NO liberada");
+                                    JOptionPane.showMessageDialog(null,
+                                        "⚠ La habitación NO fue liberada.\n\n" +
+                                        "El reporte SIRE de salida no se completó.\n" +
+                                        "La habitación permanecerá ocupada hasta que\n" +
+                                        "se complete el reporte SIRE.",
+                                        "Liberación Cancelada",
+                                        JOptionPane.WARNING_MESSAGE);
+                                }
+                            } catch (InterruptedException | ExecutionException ex) {
+                                System.err.println("[LIBERAR-HAB] ❌ Error en proceso SIRE: " + ex.getMessage());
+                                JOptionPane.showMessageDialog(null,
+                                    "Error durante el reporte SIRE.\nLa habitación NO fue liberada.",
+                                    "Error", JOptionPane.ERROR_MESSAGE);
+                            }
+                        }
+                    };
+                    sireWorker.execute();
+                    
+                } else {
+                    // ===== FLUJO PARA NACIONALES: Liberar directamente =====
+                    System.out.println("[LIBERAR-HAB] Huésped nacional - Liberando directamente");
+                    
+                    Window win = SwingUtilities.getWindowAncestor(liberarButton);
+                    if (win != null) {
+                        win.dispose();
                     }
-
-                    if (con.liberarHabitacion(numeroHabitacion, idHotel)) {
-                        botonHabitacion.setBackground(new Color(0, 153, 0));
-                        CompoundBorder compoundBorder = (CompoundBorder) botonHabitacion.getBorder();
-                        TitledBorder topBorder = (TitledBorder) compoundBorder.getOutsideBorder();
-                        TitledBorder bottomBorder = (TitledBorder) compoundBorder.getInsideBorder();
-                        topBorder.setTitle("Libre");
-                        topBorder.setTitleColor(new Color(0, 51, 51));
-                        bottomBorder.setTitleColor(new Color(0, 51, 51));
-                        botonHabitacion.repaint();
-
-                    } else {
-                        System.out.println("no se pudo liberar la habitacion");
-                    }
-
+                    
+                    liberarHabitacionVisualmente(numeroHabitacion, botonHabitacion);
                 }
             });
 
@@ -907,6 +1093,25 @@ public final class Recepciones extends javax.swing.JFrame {
                 if (fechaSeleccionada.compareTo(fechaActual) < 0) {
                     JOptionPane.showMessageDialog(null, "Operación no Autorizada!", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
+                    // Verificar si hay ventana SIRE abierta antes de reasignar
+                    System.out.println("[RECEPCION-REASIGNAR] Verificando estado SIRE...");
+                    if (ReporteSire.hayVentanaAbierta()) {
+                        System.out.println("[RECEPCION-REASIGNAR] ⚠ Ventana SIRE abierta - Bloqueando reasignación");
+                        JOptionPane.showMessageDialog(null,
+                            "⚠ REGISTRO SIRE PENDIENTE\n\n" +
+                            "Hay un reporte SIRE en proceso que debe completarse primero.\n\n" +
+                            "Por favor:\n" +
+                            "1. Complete el formulario SIRE abierto\n" +
+                            "2. Haga clic en 'AGREGAR REGISTRO'\n" +
+                            "3. Cierre la ventana del navegador\n" +
+                            "4. Intente nuevamente",
+                            "Operación Bloqueada",
+                            JOptionPane.WARNING_MESSAGE);
+                        ReporteSire.maximizarVentanaPendiente();
+                        return;
+                    }
+                    System.out.println("[RECEPCION-REASIGNAR] ✓ Procediendo con reasignación...");
+                    
                     Window win = SwingUtilities.getWindowAncestor(liberarButton);
                     if (win != null) {
                         win.dispose();
@@ -981,6 +1186,25 @@ public final class Recepciones extends javax.swing.JFrame {
             );
             switch (decision) {
                 case 0: // Registrar reserva
+                    // Verificar si hay ventana SIRE abierta antes de registrar la reserva
+                    System.out.println("[RECEPCION-RESERVA] Verificando estado SIRE...");
+                    if (ReporteSire.hayVentanaAbierta()) {
+                        System.out.println("[RECEPCION-RESERVA] ⚠ Ventana SIRE abierta - Bloqueando registro de reserva");
+                        JOptionPane.showMessageDialog(null,
+                            "⚠ REGISTRO SIRE PENDIENTE\n\n" +
+                            "Hay un reporte SIRE en proceso que debe completarse primero.\n\n" +
+                            "Por favor:\n" +
+                            "1. Complete el formulario SIRE abierto\n" +
+                            "2. Haga clic en 'AGREGAR REGISTRO'\n" +
+                            "3. Cierre la ventana del navegador\n" +
+                            "4. Intente nuevamente",
+                            "Operación Bloqueada",
+                            JOptionPane.WARNING_MESSAGE);
+                        ReporteSire.maximizarVentanaPendiente();
+                        return;
+                    }
+                    System.out.println("[RECEPCION-RESERVA] ✓ Procediendo con registro de reserva...");
+                    
                     Registros abrir = new Registros(this, false, usus, hotel);
                     int idRes1 = 0;
                     if (!jblIdRes.getText().isEmpty()) {
@@ -1042,7 +1266,7 @@ public final class Recepciones extends javax.swing.JFrame {
         }
     }
 
-    @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

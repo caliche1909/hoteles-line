@@ -42,6 +42,9 @@ Desktop.ini
 # ⚠️ ARCHIVO DE CONFIGURACIÓN CON CREDENCIALES - NO SUBIR
 config.properties
 
+# Marcador de entorno de producción
+.production
+
 # Archivos de configuración con credenciales sensibles
 # IMPORTANTE: Protege tus credenciales de base de datos
 # src/conectar/Canectar.java

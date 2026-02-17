@@ -1,0 +1,2180 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="PRAGMA" content="NO-CACHE" />
+<meta http-equiv="EXPIRES" content="-1" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE, NO-STORE, MAX-AGE=0, MUST-REVALIDATE" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+<title>SIRE - Sistema De Informaci&oacute;n Para El Reporte De
+	Extranjeros</title>
+<link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/basic_both.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/extended_both.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" media="rich-extended-skinning" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.AjaxScript.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.PrototypeScript.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/utils.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/browser_info.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/modalPanel.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/modalPanelBorders.js.jsf" type="text/javascript"></script><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/modalPanel.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg/ajax4jsf/javascript/scripts/form.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/form.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/panelMenu.js.jsf" type="text/javascript"></script><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/panelMenu.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.ImageCacheScript.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalscripts/tabPanel.js.jsf" type="text/javascript"></script><link class="component" href="/sire/a4j/s/3_3_3.Finalcss/tabPanel.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/json/json-dom.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/js/FileUpload.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/js/swfobject.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/js/progressBar.js.jsf" type="text/javascript"></script><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/fileUpload.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/progressBar.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/s/3_3_3.Finalcss/panel.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/events.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/scriptaculous/effects.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/jquery/jquery.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/JQuerySpinBtn.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/calendar.js.jsf" type="text/javascript"></script><link class="component" href="/sire/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/calendar.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/s/3_3_3.Finalcss/table.xcss/DATB/eAH7adLBF7p8hjQAEUYDcw__.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/css/msg.css.jsf" rel="stylesheet" type="text/css" /><link class="component" href="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/css/msgs.css.jsf" rel="stylesheet" type="text/css" /><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/available.js.jsf" type="text/javascript"></script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/script/controlUtils.js.jsf" type="text/javascript"></script><script type="text/javascript">window.RICH_FACES_EXTENDED_SKINNING_ON=true;</script><script src="/sire/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/skinning.js.jsf" type="text/javascript"></script><link rel="shortcut icon" href="/sire/imagenes/sifdas-icon.ico" />
+<link href="/sire/css/general.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/sire/js/util.js"></script>
+<link href="../../css/general.css" rel="stylesheet" type="text/css" media="all" />
+
+<script type="text/javascript">
+		//<![CDATA[
+			A4J.AJAX.onError = function(req, status, message) {
+		        window.location.reload();
+			}
+		//]]>
+		</script>
+	</head>
+
+	<body onload="showMessagesPanel();"><span id="j_id4"><span id="queuedMessages" class="invisible">false</span></span>
+		<center>
+			<div id="mainPanel" class="mainPanel">
+				<table width="100%" cellpadding="0" cellspacing="0" class="mainTable" border="0">
+					<tr>
+						<td class="headerExterna" colspan="2" height="155px">
+<form id="formHeader2" name="formHeader2" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded" style="margin: 0px;">
+<input type="hidden" name="formHeader2" value="formHeader2" />
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><span id="formHeader2:j_id9"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+						<image src="/sire/imagenes/cabezotes/Banner-Home.jpg" style="width:100%;height:150px;left: 10%;top: 2%;z-index: 1;"/></td>
+</tr>
+</tbody>
+</table>
+</span></td>
+</tr>
+<tr>
+<td><table class="header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col90"><table class="header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col35"><table cellpadding="0" cellspacing="0" style="margin-left: 5px;" width="100%">
+<tbody>
+<tr>
+<td class="col20"><span class="subtitulo3">Nombre:</span></td>
+<td class="col80"><span class="subtitulo4">IRMA VICTORIA VILLACREZ ORDO&Ntilde;EZ</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col35"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col30"><span class="subtitulo3">Num. Documento:</span></td>
+<td class="col70"><span class="subtitulo4">59822999</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col30"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col30"><span class="subtitulo3">E-mail:</span></td>
+<td class="col70"><span class="subtitulo4">hoteldoralplaza@gmail.com</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="col35"><table cellpadding="0" cellspacing="0" style="margin-left: 5px;" width="100%">
+<tbody>
+<tr>
+<td class="col20"><span class="subtitulo3">Empresa:</span></td>
+<td class="col80"><span class="subtitulo4">HOTEL DORAL PLAZA</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col35"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="col30"><span class="subtitulo3">&Uacute;ltimo Acceso:</span></td>
+<td class="col70"><span class="subtitulo4">15/02/2026 05:40 PM</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="col10"><table width="100%">
+<tbody>
+<tr>
+<td><input type="image" src="/sire/imagenes/boton-home.png" name="formHeader2:j_id31" alt="Inicio" title="Inicio" /></td>
+<td><input type="image" src="/sire/imagenes/boton-contra.png" name="formHeader2:j_id32" alt="Cambiar Contrase&ntilde;a" title="Cambiar Contrase&ntilde;a" /></td>
+<td><input type="image" src="/sire/imagenes/boton-exit.png" name="formHeader2:j_id33" alt="Salir" title="Salir" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form><span id="_viewRoot:status"><span id="_viewRoot:status.start" style="display: none"></span><script type="text/javascript">
+window.document.getElementById('_viewRoot:status.start').onstart=function(){document.getElementById('waitPanel').component.show('',{top:'350px', left:'650px',height:'20px', width:'20px'});;};
+</script><span id="_viewRoot:status.stop"></span><script type="text/javascript">
+window.document.getElementById('_viewRoot:status.stop').onstop=function(){document.getElementById('waitPanel').component.hide();addSeleccioneToCheckbox();;};
+</script></span><div id="waitPanel" style="display: none;"><input autocomplete="off" id="waitPanelOpenedState" name="waitPanelOpenedState" type="hidden" /><div class="rich-modalpanel " id="waitPanelContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="waitPanelDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="waitPanelFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="waitPanelCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="waitPanelShadowDiv"></div><div class=" rich-mpnl-content" id="waitPanelContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="waitPanelContentTable" style="width: 1px;height: 1px;"><tr style="height: 99%"><td class="rich-mpnl-body" valign="top"><table cellspacing="2" width="100%">
+<tbody>
+<tr>
+<td><img src="/sire/imagenes/loading.gif" class="pic" /></td>
+</tr>
+</tbody>
+</table>
+</td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="waitPanelCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="waitPanelLastHref"></button></div><script type="text/javascript">new ModalPanel('waitPanel',
+				{
+					width: -1,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div></td>
+					</tr>
+					<tr>
+						<td width="233px" height="100%" bgcolor="#F3F2F2" style="vertical-align: top;">
+							<div class="menuPanel"><span style="margin: 0px;">
+
+		<center><form id="panelMenu:_form" name="panelMenu:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sire/pages/empresas/cargueInformacion.jsf"><div class="rich-pmenu " id="panelMenu" style="width:98%; "><div class="rich-pmenu-top-group-div" id="groupEmpresas"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-top-group  rich-pmenu-group   " id="tablehidegroupEmpresas" style="; "><tbody><tr id="row_groupEmpresas"><td class="rich-pmenu-nowrap rich-pmenu-group-self-icon rich-pmenu-top-group-self-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAH7!!8!AAX9Av4_.jsf" alt="" width="16" height="16" id="leftIcongroupEmpresas" /></td><td class="rich-pmenu-group-self-label rich-pmenu-group-self-label rich-pmenu-top-group-self-label" id="icongroupEmpresas" style="width:100%"><input autocomplete="off" name="panelMenuStategroupEmpresas" type="hidden" /><input autocomplete="off" name="panelMenuActiongroupEmpresas" type="hidden" />SIRE</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAH7!!8!AAX9Av4_.jsf" alt="" width="16" height="16" id="rightIcongroupEmpresas" /></td></tr></tbody></table><div id="itemCargarInformacion"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemCargarInformacion"><tbody><tr id="row_itemCargarInformacion"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemCargarInformacion" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemCargarInformacion" style="width:100%"><input autocomplete="off" name="panelMenuActionitemCargarInformacion" type="hidden" />Cargar Informaci&oacute;n</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemCargarInformacion" /></td></tr></tbody></table></div><div id="itemConsultarCargaInformacion"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemConsultarCargaInformacion"><tbody><tr id="row_itemConsultarCargaInformacion"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemConsultarCargaInformacion" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemConsultarCargaInformacion" style="width:100%"><input autocomplete="off" name="panelMenuActionitemConsultarCargaInformacion" type="hidden" />Consultar Carga de Informaci&oacute;n</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemConsultarCargaInformacion" /></td></tr></tbody></table></div><div id="itemConsultarExtranjeros"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemConsultarExtranjeros"><tbody><tr id="row_itemConsultarExtranjeros"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemConsultarExtranjeros" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemConsultarExtranjeros" style="width:100%"><input autocomplete="off" name="panelMenuActionitemConsultarExtranjeros" type="hidden" />Consultar Extranjeros</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemConsultarExtranjeros" /></td></tr></tbody></table></div><div id="itemActualizarDatosEmpresa"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemActualizarDatosEmpresa"><tbody><tr id="row_itemActualizarDatosEmpresa"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemActualizarDatosEmpresa" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemActualizarDatosEmpresa" style="width:100%"><input autocomplete="off" name="panelMenuActionitemActualizarDatosEmpresa" type="hidden" />Actualizar Datos Persona Jur&iacute;dica</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemActualizarDatosEmpresa" /></td></tr></tbody></table></div><div id="itemDescargaFormatoEmpresa"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemDescargaFormatoEmpresa"><tbody><tr id="row_itemDescargaFormatoEmpresa"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemDescargaFormatoEmpresa" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemDescargaFormatoEmpresa" style="width:100%"><input autocomplete="off" name="panelMenuActionitemDescargaFormatoEmpresa" type="hidden" />Descargar Manual de Uso</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemDescargaFormatoEmpresa" /></td></tr></tbody></table></div><div id="itemVinculaCuenta"><table border="0" cellpadding="0" cellspacing="0" class="rich-pmenu-item  " id="tablehideitemVinculaCuenta"><tbody><tr id="row_itemVinculaCuenta"><td class="rich-pmenu-nowrap rich-pmenu-item-icon "><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" height="16" width="16" /><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="leftIconitemVinculaCuenta" /></td><td class="rich-pmenu-group-self-label rich-pmenu-item-label" id="iconitemVinculaCuenta" style="width:100%"><input autocomplete="off" name="panelMenuActionitemVinculaCuenta" type="hidden" />Vincular Cuenta</td><td><img src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf" alt="" width="16" height="16" id="rightIconitemVinculaCuenta" /></td></tr></tbody></table></div></div><input autocomplete="off" id="panelMenuselectedItemName" name="panelMenuselectedItemName" type="hidden" /><div style="display:none"><script id="scriptpanelMenu" type="text/javascript">var ids = new PanelMenu('panelMenu',false).getIds();
+var params = new Object();new PanelMenuItem(ids, params,{myId:'groupEmpresas',parentId:'panelMenu'},{type:"node",onopen:";",onclose:";",event:"click",mode:"none",target:"",disabled:false,target:"",name:"groupEmpresas"},{},new Array("rich-pmenu-hovered-element"),0,true,false,true,"A4J.AJAX.Submit(null,event,{'control':this,'similarityGroupingId':'groupEmpresas','parameters':{'ajaxSingle':'groupEmpresas','groupEmpresas':'groupEmpresas'} ,'actionUrl':'/sire/pages/empresas/cargueInformacion.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAH7!!8!AAX9Av4_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAH7!!8!AAX9Av4_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAH7!!8!AAX9Av4_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemCargarInformacion',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemCargarInformacion"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemCargarInformacion','parameters':{'ajaxSingle':'itemCargarInformacion','itemCargarInformacion':'itemCargarInformacion'} ,'actionUrl':'/sire/pages/empresas/cargueInformacion.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemConsultarCargaInformacion',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemConsultarCargaInformacion"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemConsultarCargaInformacion','parameters':{'ajaxSingle':'itemConsultarCargaInformacion','itemConsultarCargaInformacion':'itemConsultarCargaInformacion'} ,'actionUrl':'/sire/pages/empresas/cargueInformacion.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemConsultarExtranjeros',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemConsultarExtranjeros"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemConsultarExtranjeros','parameters':{'itemConsultarExtranjeros':'itemConsultarExtranjeros','ajaxSingle':'itemConsultarExtranjeros'} ,'actionUrl':'/sire/pages/empresas/cargueInformacion.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemActualizarDatosEmpresa',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemActualizarDatosEmpresa"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemActualizarDatosEmpresa','parameters':{'itemActualizarDatosEmpresa':'itemActualizarDatosEmpresa','ajaxSingle':'itemActualizarDatosEmpresa'} ,'actionUrl':'/sire/pages/empresas/cargueInformacion.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemDescargaFormatoEmpresa',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemDescargaFormatoEmpresa"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemDescargaFormatoEmpresa','parameters':{'ajaxSingle':'itemDescargaFormatoEmpresa','itemDescargaFormatoEmpresa':'itemDescargaFormatoEmpresa'} ,'actionUrl':'/sire/pages/empresas/cargueInformacion.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+var params = new Object();new PanelMenuItem(ids, params,{myId:'itemVinculaCuenta',parentId:'groupEmpresas'},{type:"item",onopen:"",onclose:"",event:"click",mode:"ajax",target:"",disabled:false,target:"",name:"itemVinculaCuenta"},{},new Array("rich-pmenu-hovered-element"),1,false,true,false,"A4J.AJAX.Submit(null,event,{'similarityGroupingId':'itemVinculaCuenta','parameters':{'itemVinculaCuenta':'itemVinculaCuenta','ajaxSingle':'itemVinculaCuenta'} ,'actionUrl':'/sire/pages/empresas/cargueInformacion.jsf'} )","","left","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf","/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconGrid/DATB/eAFLS0sDAAJnATM_.jsf" ,"" ,"/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.PanelMenuIconSpacer/DATB/eAFLS0sDAAJnATM_.jsf");
+</script></div></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" /></form>
+		</center></span>
+							</div>
+						</td>
+						<td width="77%" height="100%" style="vertical-align: top;">
+							<div class="contentPanel">
+
+		<script type="text/javascript" language="JavaScript">
+		//<![CDATA[
+	    	jQuery(document).ready(function(){
+		    	//Seguro en botones lentos para usuarios impacientes.
+		    	jQuery(':button[value="ENVIAR INFORMACIÓN"]').
+		    	click(function(){
+			    			jQuery(this).attr('disabled',true);
+			    });
+			    //Imágenes con texto activo.
+			    jQuery('img[src="/migracionSire/imagenes/update_grid.png"]')
+			    .attr('title','Modificar').tooltip();
+			    jQuery('img[src="/migracionSire/imagenes/fatal.png"]')
+			    .attr('title','Eliminar').tooltip();
+		    });   
+			/**Valida que cierta fecha no sea posterior a la fecha del sistema.*/
+			function beforeTodayValidationFn(day){
+				var curDt = new Date();
+				if (curDt==undefined){
+		            curDt = day.date.getDate;
+		        }
+		        if (curDt.getTime() - day.date.getTime() > 0) 
+			        return true; 
+			    return false;  
+			}
+			/**Valida que cierta fecha sea anterior o igual a la fecha del sistema.*/
+			function beforeEqTodayValidationFn(day){
+				var curDt = new Date();
+				if (curDt==undefined){
+		            curDt = day.date.getDate;
+		        }
+		        if (curDt.getTime() - day.date.getTime() >= 0) 
+			        return true; 
+			    return false;  
+			}
+			function esAlphaNum(e) {
+		        var charCode = (e.which) ? e.which : e.keyCode;
+		        if (charCode == 8) return true;
+
+		        var keynum;
+		        var keychar;
+		        var charcheck = /[a-zA-Z0-9]/;
+		        if (window.event) // IE
+		        {
+		            keynum = e.keyCode;
+		        }
+		        else {
+		            if (e.which) // Netscape/Firefox/Opera
+		            {
+		                keynum = e.which;
+		            }
+		            else return true;
+		        }
+
+		        keychar = String.fromCharCode(keynum);
+		        return charcheck.test(keychar);
+		    }
+			function esAlphaNumSpace(e) {
+		        var charCode = (e.which) ? e.which : e.keyCode;
+		        if (charCode == 8) return true;
+
+		        var keynum;
+		        var keychar;
+		        var charcheck = /[a-zA-Z0-9 ]/;
+		        if (window.event) // IE
+		        {
+		            keynum = e.keyCode;
+		        }
+		        else {
+		            if (e.which) // Netscape/Firefox/Opera
+		            {
+		                keynum = e.which;
+		            }
+		            else return true;
+		        }
+
+		        keychar = String.fromCharCode(keynum);
+		        return charcheck.test(keychar);
+		    }
+			function esAlphaNumSpaceGuion(e) {
+		        var charCode = (e.which) ? e.which : e.keyCode;
+		        if (charCode == 8) return true;
+
+		        var keynum;
+		        var keychar;
+		        var charcheck = /[a-zA-Z0-9- ]/;
+		        if (window.event) // IE
+		        {
+		            keynum = e.keyCode;
+		        }
+		        else {
+		            if (e.which) // Netscape/Firefox/Opera
+		            {
+		                keynum = e.which;
+		            }
+		            else return true;
+		        }
+
+		        keychar = String.fromCharCode(keynum);
+		        return charcheck.test(keychar);
+		    }
+			/**Valida que cierta fecha no sea anterior a la fecha del sistema.*/
+			function afterTodayValidationFn(day){
+				var curDt = new Date();
+				if (curDt==undefined){
+		            curDt = day.date.getDate;
+		        }
+		        if (curDt.getTime() - day.date.getTime() < 0) 
+			        return true; 
+			    return false;  
+			}
+			/**Retorna el estilo para fechas dependiendo de si son anteriores o iguales a la fecha del sistema.*/
+			function beforeEqTodayStyleFn(day){
+				if(!beforeEqTodayValidationFn(day))
+					return 'rich-calendar-boundary-dates';
+				return '';
+			}
+			/**Retorna el estilo para fechas dependiendo de si son posteriores a la fecha del sistema.*/
+			function afterTodayStyleFn(day){
+				if(!afterTodayValidationFn(day))
+					return 'rich-calendar-boundary-dates';
+				return '';
+			} 
+			
+			function seleccionarEmpresa() {
+		    	window.open("/sire/pages/general/empresas/modal/seleccionarEmpresa.jsf","","width=700,height=450,resizable=1,scrollbars=1");
+	    	    return false;
+	    	}
+	    	
+			function limitTextArea(element, limit) { 
+
+				if (element.value.length > limit) { 
+				element.value = element.value.substring(0, limit); 
+				} 
+			}
+			function buscarDireccion() {
+				var posicion_x; 
+				var posicion_y;
+				posicion_x=(screen.width/2)-(1050/2); 
+				posicion_y=(screen.height/2)-(3002); 
+				window.open("/sire/pages/modal/direccion.jsf","","width=1050,height=300,resizable=1,scrollbars=1,left="+posicion_x+",top="+posicion_y+"");
+				return false;
+		    } 
+		    function obtenerDireccion(direccion) {
+		    	var direccionIn = document.getElementById("cargueFormGB:direccion");
+		    	var direccionInOculto = document.getElementById("cargueFormGB:direccionOculto");
+			    	if(direccionIn !=null && direccionInOculto!=null){
+				    	direccionIn.value = direccion.value;
+				    	direccionInOculto.value =direccion.value;
+			    	}
+		    	var direccionInAc = document.getElementById("cargueFormRac:direccion");
+		    	var direccionInOcultoAc = document.getElementById("cargueFormRac:direccionOculto");
+			    	if(direccionInAc != null && direccionInOcultoAc != null){
+				    	direccionInAc.value = direccion.value;
+				    	direccionInOcultoAc.value =direccion.value;
+			    	}
+			    var direccionInRe = document.getElementById("cargueFormReligiosas:direccion");
+			    var direccionInOcultoRe = document.getElementById("cargueFormReligiosas:direccionOculto");
+				    if(direccionInRe != null && direccionInOcultoRe != null){
+					    direccionInRe.value = direccion.value;
+					    direccionInOcultoRe.value =direccion.value;
+				    }
+				var direccionInCo = document.getElementById("cargueFormCooperantes:direccion");
+			    var direccionInOcultoCo = document.getElementById("cargueFormCooperantes:direccionOculto");
+					 if(direccionInCo != null && direccionInOcultoCo != null){
+						  direccionInCo.value = direccion.value;
+						  direccionInOcultoCo.value =direccion.value;
+					  }
+			
+				var direccionInSa = document.getElementById("cargueSalud:direccion");
+				var direccionInOcultoSa = document.getElementById("cargueSalud:direccionOculto");
+					 if(direccionInSa != null && direccionInOcultoSa != null){
+							direccionInSa.value = direccion.value;
+							direccionInOcultoSa.value =direccion.value;
+						}	  
+
+				var direccionInTn = document.getElementById("cargueFormTransporteNacional:direccion");
+				var direccionInOcultoTn = document.getElementById("cargueFormTransporteNacional:direccionOculto");
+					 if(direccionInTn != null && direccionInOcultoTn != null){
+						 direccionInTn.value = direccion.value;
+						 direccionInOcultoTn.value =direccion.value;
+						}		 
+		    
+						
+				 var direccionInCa = document.getElementById("cargueFormCentrosCarcelarios:direccion");
+					var direccionInOcultoCa = document.getElementById("cargueFormCentrosCarcelarios:direccionOculto");
+						 if(direccionInCa != null && direccionInOcultoCa != null){
+							 direccionInCa.value = direccion.value;
+							 direccionInOcultoCa.value =direccion.value;
+							}			   
+		    }
+			function validarNumero(e) { // 1
+			    tecla = (document.all) ? e.keyCode : e.which; // 2
+			    if (tecla==8) return true; // 3
+			    patron =/[0-9]/; // 4
+			    te = String.fromCharCode(tecla); // 5
+			    return patron.test(te); // 6
+			}
+
+			function showPop() {
+                document.getElementById('panelTransporteNacionalInfoInicio').component.show();
+			}
+	    	//]]>
+		</script><script type="text/javascript">RichFaces.tabPanel['j_id44']={'id':'j_id44','ontabchange':''} ;</script><table border="0" cellpadding="0" cellspacing="0" class="rich-tabpanel " id="j_id44" style="width:"><tbody><tr><td align="left" class="rich-tab-bottom-line "><form id="j_id44:_form" name="j_id44:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sire/pages/empresas/cargueInformacion.jsf"><!--table  border="0" cellpadding="0" cellspacing="0" style="position:relative;top:1px"--><table border="0" cellpadding="0" cellspacing="0"><tr><td><img alt="" height="1" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" style="width: 1px; ;border:0" /></td><td id="GB_cell" style="height: 100%; vertical-align: bottom;" class="rich-tabhdr-cell-inactive"><table border="0" cellpadding="0" cellspacing="0" id="GB_shifted" onclick="if (RichFaces.isTabActive('GB_lbl')) return false; if (!RichFaces.onTabChange(event, 'j_id44','GB')) return false;var _formName = A4J.findForm(this).id; var _paramName = 'GB_server_submit'; var _params = new Object(); _params[_paramName] = _paramName; _JSFFormSubmit('GB', _formName, null, _params);this.onclick = null; _clearJSFFormParameters(_formName, null, [_paramName]);" style="position:relative;;height : 100%; "><tr><td class="rich-tabhdr-side-border"><img alt="" height="1" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" style="border:0" width="1" /></td><td class="rich-tabhdr-side-cell"><table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%;"><tr><td id="GB_lbl" onmouseover="RichFaces.overTab(this);" onmouseout="RichFaces.outTab(this);" class="rich-tab-header rich-tab-inactive    ">Vinculaci&oacute;n o Contrataci&oacute;n de Extranjeros - Genera Beneficio</td></tr></table></td><td class="rich-tabhdr-side-border"><img alt="" height="1" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" style="border:0" width="1" /></td></tr></table></td><td><img alt="" height="1" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" style="width: 1px; ;border:0" /></td><td id="HOTEL_cell" style="height: 100%; vertical-align: bottom;" class="rich-tabhdr-cell-active"><table border="0" cellpadding="0" cellspacing="0" id="HOTEL_shifted" onclick="if (RichFaces.isTabActive('HOTEL_lbl')) return false; if (!RichFaces.onTabChange(event, 'j_id44','HOTEL')) return false;var _formName = A4J.findForm(this).id; var _paramName = 'HOTEL_server_submit'; var _params = new Object(); _params[_paramName] = _paramName; _JSFFormSubmit('HOTEL', _formName, null, _params);this.onclick = null; _clearJSFFormParameters(_formName, null, [_paramName]);" style="position:relative; top:1px;;height : 100%; "><tr><td class="rich-tabhdr-side-border"><img alt="" height="1" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" style="border:0" width="1" /></td><td class="rich-tabhdr-side-cell"><table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%;"><tr><td id="HOTEL_lbl" onmouseover="RichFaces.overTab(this);" onmouseout="RichFaces.outTab(this);" class="rich-tab-header rich-tab-active    ">Alojamiento y Hospedaje</td></tr></table></td><td class="rich-tabhdr-side-border"><img alt="" height="1" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" style="border:0" width="1" /></td></tr></table></td><td><img alt="" height="1" src="/sire/a4j/g/3_3_3.Finalimages/spacer.gif.jsf" style="width: 1px; ;border:0" /></td></tr></table><div style="display: none;"><script type="text/javascript">RichFaces.panelTabs['j_id44']=[{'inactiveClass':'rich\x2Dtab\x2Dheader rich\x2Dtab\x2Dinactive    ','cellInactiveClass':'rich\x2Dtabhdr\x2Dcell\x2Dinactive','ontabenter':'','ontableave':'','id':'GB','name':'GB','activeClass':'rich\x2Dtab\x2Dheader rich\x2Dtab\x2Dactive    ','cellActiveClass':'rich\x2Dtabhdr\x2Dcell\x2Dactive'} ,{'inactiveClass':'rich\x2Dtab\x2Dheader rich\x2Dtab\x2Dinactive    ','cellInactiveClass':'rich\x2Dtabhdr\x2Dcell\x2Dinactive','ontabenter':'','ontableave':'','id':'HOTEL','name':'HOTEL','activeClass':'rich\x2Dtab\x2Dheader rich\x2Dtab\x2Dactive    ','cellActiveClass':'rich\x2Dtabhdr\x2Dcell\x2Dactive'} ] ;</script></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" /></form></td></tr><tr>
+			<!-- RELIGIOSAS --><td id="HOTEL" style=";height:100%"><table border="0" cellpadding="10" cellspacing="0" class="rich-tabpanel-content-position" width="100%"><tr><td class="rich-tabpanel-content  " style="; ">
+<form id="cargueFormHospedaje" name="cargueFormHospedaje" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="cargueFormHospedaje" value="cargueFormHospedaje" />
+
+					<br /><span id="cargueFormHospedaje:j_id806"><span class="textoSubtituloGrande">Todos los establecimientos que prestan el servicio de alojamiento y hospedaje dentro del pa&iacute;s y admitan el alojamiento de extranjeros.</span>
+						<br />
+						<br />Puede cargar la informaci&oacute;n por archivo plano (TXT) o incluir los datos directamente en un formulario.
+
+						<br />
+						<br /><table id="cargueFormHospedaje:tipoCargue" class="combo">
+	<tr>
+<td>
+<input type="radio" checked="checked" name="cargueFormHospedaje:tipoCargue" id="cargueFormHospedaje:tipoCargue:0" value="F" onchange="submit()" /><label for="cargueFormHospedaje:tipoCargue:0"> Diligenciar Formulario</label></td>
+<td>
+<input type="radio" name="cargueFormHospedaje:tipoCargue" id="cargueFormHospedaje:tipoCargue:1" value="A" onchange="submit()" /><label for="cargueFormHospedaje:tipoCargue:1"> Cargar Archivo</label></td>
+	</tr>
+</table>
+						<br />
+						<br />
+						<center>
+						</center>
+						<br /><div class="rich-panel " id="cargueFormHospedaje:j_id824"><div class="rich-panel-body " id="cargueFormHospedaje:j_id824_body"><table id="cargueFormHospedaje:panelHotelesForm6" width="100%">
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento*:</span></td>
+<td><select id="cargueFormHospedaje:tipoMovimiento" name="cargueFormHospedaje:tipoMovimiento" class="combo" size="1" onchange="A4J.AJAX.Submit('cargueFormHospedaje',event,{'control':this,'similarityGroupingId':'cargueFormHospedaje:j_id828','parameters':{'ajaxSingle':'cargueFormHospedaje:tipoMovimiento','cargueFormHospedaje:j_id828':'cargueFormHospedaje:j_id828'} } )">	<option value="" selected="selected">Seleccionar</option>
+	<option value="3">Entrada</option>
+	<option value="4">Salida</option>
+</select></td>
+<td><span class="etiqueta">Fecha de Movimiento*:</span></td>
+<td><span id="cargueFormHospedaje:fechaMovimientoPopup"><input class="rich-calendar-input " id="cargueFormHospedaje:fechaMovimientoInputDate" name="cargueFormHospedaje:fechaMovimientoInputDate" style="vertical-align: middle; " type="text" readonly="readonly" /><img alt="" class="rich-calendar-button " id="cargueFormHospedaje:fechaMovimientoPopupButton" style="vertical-align: middle" src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.CalendarIcon/DATB/eAFLS0tjmPUcAAgbArQ_.jsf" /><input autocomplete="off" id="cargueFormHospedaje:fechaMovimientoInputCurrentDate" name="cargueFormHospedaje:fechaMovimientoInputCurrentDate" style="display:none" type="hidden" value="02/2026" /></span><div id="cargueFormHospedaje:fechaMovimientoIFrame" style="display: none;"></div><div id="cargueFormHospedaje:fechaMovimiento" style="display: none;"></div><div id="cargueFormHospedaje:fechaMovimientoScript" style="display: none;"><script type="text/javascript">Richfaces.Calendar.addLocale('es_CO', {'weekDayLabels':['domingo','lunes','martes','miércoles','jueves','viernes','sábado'] ,'weekDayLabelsShort':['dom','lun','mar','mié','jue','vie','sáb'] ,'monthLabels':['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'] ,'monthLabelsShort':['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'] ,'minDaysInFirstWeek':1,'firstWeekDay':1} );
+new Calendar('cargueFormHospedaje:fechaMovimiento', 
+			"es_CO",{'dayStyleClass':beforeEqTodayStyleFn,'currentDate':new Date(2026,1,15),'datePattern':'d/M/yyyy','labels':{'apply':'Aplicar','clean':'Limpiar','today':'Hoy','ok':'Aceptar','cancel':'Cancelar','close':'Cerrar'} ,'isDayEnabled':beforeEqTodayValidationFn} ,{} ).load();</script></div></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+						<br /><div class="rich-panel " id="cargueFormHospedaje:j_id831"><div class="rich-panel-body " id="cargueFormHospedaje:j_id831_body"><table id="cargueFormHospedaje:panelHotelesForm66" width="100%">
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Documento*:</span></td>
+<td><select id="cargueFormHospedaje:tipoDocumento" name="cargueFormHospedaje:tipoDocumento" class="combo" size="1" onchange="A4J.AJAX.Submit('cargueFormHospedaje',event,{'control':this,'similarityGroupingId':'cargueFormHospedaje:j_id835','parameters':{'ajaxSingle':'cargueFormHospedaje:tipoDocumento','cargueFormHospedaje:j_id835':'cargueFormHospedaje:j_id835'} } )">	<option value="" selected="selected">Seleccionar</option>
+	<option value="46">CARNE DIPLOMATICO</option>
+	<option value="5">C&Eacute;DULA DE EXTRANJER&Iacute;A</option>
+	<option value="10">DOCUMENTO EXTRANJERO</option>
+	<option value="3">PASAPORTE</option>
+	<option value="55">PERMISO ESPECIAL DE PERMANENCIA</option>
+	<option value="52">PERMISO POR PROTECCION TEMPORAL</option>
+</select></td>
+<td><span class="etiqueta">N&uacute;mero de Documento*:</span></td>
+<td><input id="cargueFormHospedaje:numeroDocumento" type="text" name="cargueFormHospedaje:numeroDocumento" class="texto" maxlength="20" /></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Nacimiento*:</span></td>
+<td><span id="cargueFormHospedaje:fechaNacimientoPopup"><input class="rich-calendar-input " id="cargueFormHospedaje:fechaNacimientoInputDate" name="cargueFormHospedaje:fechaNacimientoInputDate" style="vertical-align: middle; " type="text" readonly="readonly" /><img alt="" class="rich-calendar-button " id="cargueFormHospedaje:fechaNacimientoPopupButton" style="vertical-align: middle" src="/sire/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.iconimages.CalendarIcon/DATB/eAFLS0tjmPUcAAgbArQ_.jsf" /><input autocomplete="off" id="cargueFormHospedaje:fechaNacimientoInputCurrentDate" name="cargueFormHospedaje:fechaNacimientoInputCurrentDate" style="display:none" type="hidden" value="02/2026" /></span><div id="cargueFormHospedaje:fechaNacimientoIFrame" style="display: none;"></div><div id="cargueFormHospedaje:fechaNacimiento" style="display: none;"></div><div id="cargueFormHospedaje:fechaNacimientoScript" style="display: none;"><script type="text/javascript">new Calendar('cargueFormHospedaje:fechaNacimiento', 
+			"es_CO",{'dayStyleClass':beforeEqTodayStyleFn,'currentDate':new Date(2026,1,15),'datePattern':'d/M/yyyy','labels':{'apply':'Aplicar','clean':'Limpiar','today':'Hoy','ok':'Aceptar','cancel':'Cancelar','close':'Cerrar'} ,'isDayEnabled':beforeEqTodayValidationFn} ,{} ).load();</script></div></td>
+<td><span class="etiqueta">Primer Apellido*:</span></td>
+<td><input id="cargueFormHospedaje:primerApellido" type="text" name="cargueFormHospedaje:primerApellido" class="texto" /></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><input id="cargueFormHospedaje:segundoApellido" type="text" name="cargueFormHospedaje:segundoApellido" class="texto" /></td>
+<td><span class="etiqueta">Nombres*:</span></td>
+<td><input id="cargueFormHospedaje:nombres" type="text" name="cargueFormHospedaje:nombres" class="texto" /></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nacionalidad*:</span></td>
+<td><select id="cargueFormHospedaje:nacionalidad" name="cargueFormHospedaje:nacionalidad" class="combo" size="1">	<option value="" selected="selected">Seleccionar</option>
+	<option value="13">AFGANISTAN</option>
+	<option value="384">&Aring;LAND</option>
+	<option value="17">ALBANIA</option>
+	<option value="23">ALEMANIA</option>
+	<option value="37">ANDORRA</option>
+	<option value="40">ANGOLA</option>
+	<option value="895">ANGUILA</option>
+	<option value="143">ANTARTIDA</option>
+	<option value="43">ANTIGUA Y BARBUDA</option>
+	<option value="44">ANTILLAS NEERLANDESAS</option>
+	<option value="997">APATRIDA</option>
+	<option value="55">ARABIA SAUDITA</option>
+	<option value="59">ARGELIA</option>
+	<option value="63">ARGENTINA</option>
+	<option value="65">ARMENIA</option>
+	<option value="67">ARUBA</option>
+	<option value="448">ARY MACEDONIA</option>
+	<option value="69">AUSTRALIA</option>
+	<option value="72">AUSTRIA</option>
+	<option value="75">AZERBAIYAN</option>
+	<option value="77">BAHAMAS</option>
+	<option value="80">BAHREIN</option>
+	<option value="81">BANGLADESH</option>
+	<option value="83">BARBADOS</option>
+	<option value="87">BELGICA</option>
+	<option value="88">BELICE</option>
+	<option value="89">BENIN</option>
+	<option value="90">BERMUDAS</option>
+	<option value="85">BIELORRUSIA</option>
+	<option value="97">BOLIVIA</option>
+	<option value="535">BONAIRE-SAN EUSTAQUIO Y SABA</option>
+	<option value="99">BOSNIA Y HERZEGOVINA</option>
+	<option value="101">BOTSUANA</option>
+	<option value="105">BRASIL</option>
+	<option value="108">BRUNEI</option>
+	<option value="111">BULGARIA</option>
+	<option value="113">BURKINA FASO</option>
+	<option value="115">BURUNDI</option>
+	<option value="117">BUTAN</option>
+	<option value="127">CABO VERDE</option>
+	<option value="141">CAMBOYA</option>
+	<option value="145">CAMERUN</option>
+	<option value="149">CANADA</option>
+	<option value="151">CHAD</option>
+	<option value="211">CHILE</option>
+	<option value="215">CHINA</option>
+	<option value="221">CHIPRE</option>
+	<option value="717">CIUDAD DEL VATICANO</option>
+	<option value="171">COMORAS</option>
+	<option value="651">COREA DEL NORTE</option>
+	<option value="190">COREA DEL SUR</option>
+	<option value="193">COSTA DE MARFIL</option>
+	<option value="196">COSTA RICA</option>
+	<option value="198">CROACIA</option>
+	<option value="199">CUBA</option>
+	<option value="201">CURAZAO</option>
+	<option value="232">DINAMARCA</option>
+	<option value="235">DOMINICA</option>
+	<option value="239">ECUADOR</option>
+	<option value="240">EGIPTO</option>
+	<option value="242">EL SALVADOR</option>
+	<option value="244">EMIRATOS ARABES UNIDOS</option>
+	<option value="246">ERITREA</option>
+	<option value="247">ESLOVAQUIA</option>
+	<option value="248">ESLOVENIA</option>
+	<option value="245">ESPA&Ntilde;A</option>
+	<option value="249">ESTADOS UNIDOS</option>
+	<option value="251">ESTONIA</option>
+	<option value="253">ETIOPIA</option>
+	<option value="267">FILIPINAS</option>
+	<option value="271">FINLANDIA</option>
+	<option value="255">FIYI</option>
+	<option value="275">FRANCIA</option>
+	<option value="281">GABON</option>
+	<option value="285">GAMBIA</option>
+	<option value="287">GEORGIA</option>
+	<option value="289">GHANA</option>
+	<option value="293">GIBRALTAR</option>
+	<option value="297">GRANADA</option>
+	<option value="301">GRECIA</option>
+	<option value="315">GROENLANDIA</option>
+	<option value="338">GUADALUPE</option>
+	<option value="339">GUAM</option>
+	<option value="317">GUATEMALA</option>
+	<option value="340">GUAYANA FRANCESA</option>
+	<option value="146">GUERNSEY</option>
+	<option value="329">GUINEA</option>
+	<option value="331">GUINEA ECUATORIAL</option>
+	<option value="334">GUINEA-BISSAU</option>
+	<option value="325">GUYANA</option>
+	<option value="341">HAITI</option>
+	<option value="345">HONDURAS</option>
+	<option value="347">HONG KONG</option>
+	<option value="355">HUNGRIA</option>
+	<option value="361">INDIA</option>
+	<option value="365">INDONESIA</option>
+	<option value="372">IRAN</option>
+	<option value="369">IRAQ</option>
+	<option value="375">IRLANDA</option>
+	<option value="173">ISLA BOUVET</option>
+	<option value="380">ISLA DE MAN</option>
+	<option value="387">ISLA DE NAVIDAD</option>
+	<option value="379">ISLANDIA</option>
+	<option value="137">ISLAS CAIMAN</option>
+	<option value="178">ISLAS COCOS</option>
+	<option value="388">ISLAS COOK</option>
+	<option value="390">ISLAS FEROE</option>
+	<option value="904">ISLAS GEORGIAS DEL SUR Y SANDWICH DEL SU</option>
+	<option value="186">ISLAS HEARD Y MCDONALD</option>
+	<option value="191">ISLAS MALVINAS</option>
+	<option value="392">ISLAS MARIANAS DEL NORTE</option>
+	<option value="475">ISLAS MARSHALL</option>
+	<option value="381">ISLAS PITCAIRN</option>
+	<option value="395">ISLAS SALOMON</option>
+	<option value="900">ISLAS TURCAS Y CAICOS</option>
+	<option value="200">ISLAS ULTRAMARINAS DE ESTADOS UNIDOS</option>
+	<option value="866">ISLAS VIRGENES BRITANICAS</option>
+	<option value="867">ISLAS VIRGENES ESTADOUNIDENSES</option>
+	<option value="383">ISRAEL</option>
+	<option value="386">ITALIA</option>
+	<option value="391">JAMAICA</option>
+	<option value="399">JAPON</option>
+	<option value="160">JERSEY</option>
+	<option value="403">JORDANIA</option>
+	<option value="406">KAZAJISTAN</option>
+	<option value="410">KENIA</option>
+	<option value="412">KIRGUISTAN</option>
+	<option value="411">KIRIBATI</option>
+	<option value="413">KUWAIT</option>
+	<option value="420">LAOS</option>
+	<option value="426">LESOTO</option>
+	<option value="428">LETONIA</option>
+	<option value="431">LIBANO</option>
+	<option value="434">LIBERIA</option>
+	<option value="438">LIBIA</option>
+	<option value="441">LIECHTENSTEIN</option>
+	<option value="429">LITUANIA</option>
+	<option value="442">LUXEMBURGO</option>
+	<option value="447">MACAO</option>
+	<option value="450">MADAGASCAR</option>
+	<option value="455">MALASIA</option>
+	<option value="458">MALAWI</option>
+	<option value="461">MALDIVAS</option>
+	<option value="464">MALI</option>
+	<option value="467">MALTA</option>
+	<option value="474">MARRUECOS</option>
+	<option value="490">MARTINICA</option>
+	<option value="485">MAURICIO</option>
+	<option value="488">MAURITANIA</option>
+	<option value="494">MAYOTTE</option>
+	<option value="493">MEXICO</option>
+	<option value="503">MICRONESIA</option>
+	<option value="495">MOLDAVIA</option>
+	<option value="496">MONACO</option>
+	<option value="497">MONGOLIA</option>
+	<option value="499">MONTENEGRO</option>
+	<option value="501">MONTSERRAT</option>
+	<option value="505">MOZAMBIQUE</option>
+	<option value="507">MYANMAR</option>
+	<option value="981">NACIONES UNIDAS</option>
+	<option value="512">NAMIBIA</option>
+	<option value="508">NAURU</option>
+	<option value="517">NEPAL</option>
+	<option value="521">NICARAGUA</option>
+	<option value="528">NIGER</option>
+	<option value="525">NIGERIA</option>
+	<option value="531">NIUE</option>
+	<option value="163">NORFOLK</option>
+	<option value="538">NORUEGA</option>
+	<option value="539">NUEVA CALEDONIA</option>
+	<option value="540">NUEVA ZELANDA</option>
+	<option value="542">OMAN</option>
+	<option value="573">PAISES BAJOS</option>
+	<option value="576">PAKISTAN</option>
+	<option value="578">PALAOS</option>
+	<option value="600">PALESTINA (ANP)</option>
+	<option value="580">PANAMA</option>
+	<option value="582">PAPUA NUEVA GUINEA</option>
+	<option value="586">PARAGUAY</option>
+	<option value="589">PERU</option>
+	<option value="609">POLINESIA FRANCESA</option>
+	<option value="603">POLONIA</option>
+	<option value="607">PORTUGAL</option>
+	<option value="611">PUERTO RICO</option>
+	<option value="618">QATAR</option>
+	<option value="628">REINO UNIDO</option>
+	<option value="998">REPUBLICA CENTROAFRICANA</option>
+	<option value="207">REPUBLICA CHECA</option>
+	<option value="414">REPUBLICA DE KOSOVO</option>
+	<option value="170">REPUBLICA DEL CONGO</option>
+	<option value="177">REPUBLICA DEMOCRATICA DEL CONGO</option>
+	<option value="647">REPUBLICA DOMINICANA</option>
+	<option value="650">REUNION</option>
+	<option value="675">RUANDA</option>
+	<option value="670">RUMANIA</option>
+	<option value="673">RUSIA</option>
+	<option value="680">SAHARA OCCIDENTAL</option>
+	<option value="699">SAMOA</option>
+	<option value="698">SAMOA AMERICANA</option>
+	<option value="652">SAN BARTOLOME</option>
+	<option value="695">SAN CRISTOBAL Y NIEVES</option>
+	<option value="701">SAN MARINO</option>
+	<option value="663">SAN MARTIN (FRANCESA)</option>
+	<option value="534">SAN MARTIN (HOLANDESA)</option>
+	<option value="682">SAN PEDRO Y MIQUELON</option>
+	<option value="705">SAN VICENTE Y LAS GRANADINAS</option>
+	<option value="708">SANTA HELENA</option>
+	<option value="715">SANTA LUCIA</option>
+	<option value="720">SANTO TOME Y PRINCIPE</option>
+	<option value="728">SENEGAL</option>
+	<option value="729">SERBIA</option>
+	<option value="731">SEYCHELLES</option>
+	<option value="735">SIERRA LEONA</option>
+	<option value="741">SINGAPUR</option>
+	<option value="744">SIRIA</option>
+	<option value="748">SOMALIA</option>
+	<option value="750">SRI LANKA</option>
+	<option value="773">SUAZILANDIA</option>
+	<option value="756">SUDAFRICA</option>
+	<option value="759">SUDAN</option>
+	<option value="903">SUDAN DEL SUR</option>
+	<option value="764">SUECIA</option>
+	<option value="767">SUIZA</option>
+	<option value="770">SURINAM</option>
+	<option value="730">SVALBARD Y JAN MAYEN</option>
+	<option value="776">TAILANDIA</option>
+	<option value="218">TAIWAN</option>
+	<option value="780">TANZANIA</option>
+	<option value="775">TAYIKISTAN</option>
+	<option value="778">TERRIT. BRITANICO EN ANTARTIDA</option>
+	<option value="779">TERRITORIO BRITANICO DEL OCEANO INDICO</option>
+	<option value="781">TERRITORIOS AUSTRALES FRANCESES</option>
+	<option value="783">TIMOR ORIENTAL</option>
+	<option value="800">TOGO</option>
+	<option value="812">TOKELAU</option>
+	<option value="810">TONGA</option>
+	<option value="815">TRINIDAD Y TOBAGO</option>
+	<option value="820">TUNEZ</option>
+	<option value="829">TURKMENISTAN</option>
+	<option value="827">TURQUIA</option>
+	<option value="828">TUVALU</option>
+	<option value="830">UCRANIA</option>
+	<option value="833">UGANDA</option>
+	<option value="845">URUGUAY</option>
+	<option value="847">UZBEKISTAN</option>
+	<option value="849">VANUATU</option>
+	<option value="850">VENEZUELA</option>
+	<option value="855">VIETNAM</option>
+	<option value="394">WALLIS Y FUTUNA</option>
+	<option value="880">YEMEN</option>
+	<option value="920">YIBUTI</option>
+	<option value="890">ZAMBIA</option>
+	<option value="892">ZIMBABUE</option>
+</select><span class="etiqueta">&nbsp; Aplica solo para extranjeros*</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Pa&iacute;s de Procedencia*:</span></td>
+<td><select id="cargueFormHospedaje:procedencia" name="cargueFormHospedaje:procedencia" class="combo" size="1" onchange="A4J.AJAX.Submit('cargueFormHospedaje',event,{'control':this,'similarityGroupingId':'cargueFormHospedaje:j_id851','parameters':{'cargueFormHospedaje:j_id851':'cargueFormHospedaje:j_id851','ajaxSingle':'cargueFormHospedaje:procedencia'} } )">	<option value="" selected="selected">Seleccionar</option>
+	<option value="13">AFGANISTAN</option>
+	<option value="384">&Aring;LAND</option>
+	<option value="17">ALBANIA</option>
+	<option value="23">ALEMANIA</option>
+	<option value="37">ANDORRA</option>
+	<option value="40">ANGOLA</option>
+	<option value="895">ANGUILA</option>
+	<option value="143">ANTARTIDA</option>
+	<option value="43">ANTIGUA Y BARBUDA</option>
+	<option value="44">ANTILLAS NEERLANDESAS</option>
+	<option value="997">APATRIDA</option>
+	<option value="55">ARABIA SAUDITA</option>
+	<option value="59">ARGELIA</option>
+	<option value="63">ARGENTINA</option>
+	<option value="65">ARMENIA</option>
+	<option value="67">ARUBA</option>
+	<option value="448">ARY MACEDONIA</option>
+	<option value="69">AUSTRALIA</option>
+	<option value="72">AUSTRIA</option>
+	<option value="75">AZERBAIYAN</option>
+	<option value="77">BAHAMAS</option>
+	<option value="80">BAHREIN</option>
+	<option value="81">BANGLADESH</option>
+	<option value="83">BARBADOS</option>
+	<option value="87">BELGICA</option>
+	<option value="88">BELICE</option>
+	<option value="89">BENIN</option>
+	<option value="90">BERMUDAS</option>
+	<option value="85">BIELORRUSIA</option>
+	<option value="97">BOLIVIA</option>
+	<option value="535">BONAIRE-SAN EUSTAQUIO Y SABA</option>
+	<option value="99">BOSNIA Y HERZEGOVINA</option>
+	<option value="101">BOTSUANA</option>
+	<option value="105">BRASIL</option>
+	<option value="108">BRUNEI</option>
+	<option value="111">BULGARIA</option>
+	<option value="113">BURKINA FASO</option>
+	<option value="115">BURUNDI</option>
+	<option value="117">BUTAN</option>
+	<option value="127">CABO VERDE</option>
+	<option value="141">CAMBOYA</option>
+	<option value="145">CAMERUN</option>
+	<option value="149">CANADA</option>
+	<option value="151">CHAD</option>
+	<option value="211">CHILE</option>
+	<option value="215">CHINA</option>
+	<option value="221">CHIPRE</option>
+	<option value="717">CIUDAD DEL VATICANO</option>
+	<option value="169">COLOMBIA</option>
+	<option value="171">COMORAS</option>
+	<option value="651">COREA DEL NORTE</option>
+	<option value="190">COREA DEL SUR</option>
+	<option value="193">COSTA DE MARFIL</option>
+	<option value="196">COSTA RICA</option>
+	<option value="198">CROACIA</option>
+	<option value="199">CUBA</option>
+	<option value="201">CURAZAO</option>
+	<option value="232">DINAMARCA</option>
+	<option value="235">DOMINICA</option>
+	<option value="239">ECUADOR</option>
+	<option value="240">EGIPTO</option>
+	<option value="242">EL SALVADOR</option>
+	<option value="244">EMIRATOS ARABES UNIDOS</option>
+	<option value="246">ERITREA</option>
+	<option value="247">ESLOVAQUIA</option>
+	<option value="248">ESLOVENIA</option>
+	<option value="245">ESPA&Ntilde;A</option>
+	<option value="249">ESTADOS UNIDOS</option>
+	<option value="251">ESTONIA</option>
+	<option value="253">ETIOPIA</option>
+	<option value="267">FILIPINAS</option>
+	<option value="271">FINLANDIA</option>
+	<option value="255">FIYI</option>
+	<option value="275">FRANCIA</option>
+	<option value="281">GABON</option>
+	<option value="285">GAMBIA</option>
+	<option value="287">GEORGIA</option>
+	<option value="289">GHANA</option>
+	<option value="293">GIBRALTAR</option>
+	<option value="297">GRANADA</option>
+	<option value="301">GRECIA</option>
+	<option value="315">GROENLANDIA</option>
+	<option value="338">GUADALUPE</option>
+	<option value="339">GUAM</option>
+	<option value="317">GUATEMALA</option>
+	<option value="340">GUAYANA FRANCESA</option>
+	<option value="146">GUERNSEY</option>
+	<option value="329">GUINEA</option>
+	<option value="331">GUINEA ECUATORIAL</option>
+	<option value="334">GUINEA-BISSAU</option>
+	<option value="325">GUYANA</option>
+	<option value="341">HAITI</option>
+	<option value="345">HONDURAS</option>
+	<option value="347">HONG KONG</option>
+	<option value="355">HUNGRIA</option>
+	<option value="361">INDIA</option>
+	<option value="365">INDONESIA</option>
+	<option value="372">IRAN</option>
+	<option value="369">IRAQ</option>
+	<option value="375">IRLANDA</option>
+	<option value="173">ISLA BOUVET</option>
+	<option value="380">ISLA DE MAN</option>
+	<option value="387">ISLA DE NAVIDAD</option>
+	<option value="379">ISLANDIA</option>
+	<option value="137">ISLAS CAIMAN</option>
+	<option value="178">ISLAS COCOS</option>
+	<option value="388">ISLAS COOK</option>
+	<option value="390">ISLAS FEROE</option>
+	<option value="904">ISLAS GEORGIAS DEL SUR Y SANDWICH DEL SU</option>
+	<option value="186">ISLAS HEARD Y MCDONALD</option>
+	<option value="191">ISLAS MALVINAS</option>
+	<option value="392">ISLAS MARIANAS DEL NORTE</option>
+	<option value="475">ISLAS MARSHALL</option>
+	<option value="381">ISLAS PITCAIRN</option>
+	<option value="395">ISLAS SALOMON</option>
+	<option value="900">ISLAS TURCAS Y CAICOS</option>
+	<option value="200">ISLAS ULTRAMARINAS DE ESTADOS UNIDOS</option>
+	<option value="866">ISLAS VIRGENES BRITANICAS</option>
+	<option value="867">ISLAS VIRGENES ESTADOUNIDENSES</option>
+	<option value="383">ISRAEL</option>
+	<option value="386">ITALIA</option>
+	<option value="391">JAMAICA</option>
+	<option value="399">JAPON</option>
+	<option value="160">JERSEY</option>
+	<option value="403">JORDANIA</option>
+	<option value="406">KAZAJISTAN</option>
+	<option value="410">KENIA</option>
+	<option value="412">KIRGUISTAN</option>
+	<option value="411">KIRIBATI</option>
+	<option value="413">KUWAIT</option>
+	<option value="420">LAOS</option>
+	<option value="426">LESOTO</option>
+	<option value="428">LETONIA</option>
+	<option value="431">LIBANO</option>
+	<option value="434">LIBERIA</option>
+	<option value="438">LIBIA</option>
+	<option value="441">LIECHTENSTEIN</option>
+	<option value="429">LITUANIA</option>
+	<option value="442">LUXEMBURGO</option>
+	<option value="447">MACAO</option>
+	<option value="450">MADAGASCAR</option>
+	<option value="455">MALASIA</option>
+	<option value="458">MALAWI</option>
+	<option value="461">MALDIVAS</option>
+	<option value="464">MALI</option>
+	<option value="467">MALTA</option>
+	<option value="474">MARRUECOS</option>
+	<option value="490">MARTINICA</option>
+	<option value="485">MAURICIO</option>
+	<option value="488">MAURITANIA</option>
+	<option value="494">MAYOTTE</option>
+	<option value="493">MEXICO</option>
+	<option value="503">MICRONESIA</option>
+	<option value="495">MOLDAVIA</option>
+	<option value="496">MONACO</option>
+	<option value="497">MONGOLIA</option>
+	<option value="499">MONTENEGRO</option>
+	<option value="501">MONTSERRAT</option>
+	<option value="505">MOZAMBIQUE</option>
+	<option value="507">MYANMAR</option>
+	<option value="981">NACIONES UNIDAS</option>
+	<option value="512">NAMIBIA</option>
+	<option value="508">NAURU</option>
+	<option value="517">NEPAL</option>
+	<option value="521">NICARAGUA</option>
+	<option value="528">NIGER</option>
+	<option value="525">NIGERIA</option>
+	<option value="531">NIUE</option>
+	<option value="996">NO ESPECIFICADO</option>
+	<option value="163">NORFOLK</option>
+	<option value="538">NORUEGA</option>
+	<option value="539">NUEVA CALEDONIA</option>
+	<option value="540">NUEVA ZELANDA</option>
+	<option value="542">OMAN</option>
+	<option value="573">PAISES BAJOS</option>
+	<option value="576">PAKISTAN</option>
+	<option value="578">PALAOS</option>
+	<option value="600">PALESTINA (ANP)</option>
+	<option value="580">PANAMA</option>
+	<option value="582">PAPUA NUEVA GUINEA</option>
+	<option value="586">PARAGUAY</option>
+	<option value="589">PERU</option>
+	<option value="609">POLINESIA FRANCESA</option>
+	<option value="603">POLONIA</option>
+	<option value="607">PORTUGAL</option>
+	<option value="611">PUERTO RICO</option>
+	<option value="618">QATAR</option>
+	<option value="628">REINO UNIDO</option>
+	<option value="998">REPUBLICA CENTROAFRICANA</option>
+	<option value="207">REPUBLICA CHECA</option>
+	<option value="414">REPUBLICA DE KOSOVO</option>
+	<option value="170">REPUBLICA DEL CONGO</option>
+	<option value="177">REPUBLICA DEMOCRATICA DEL CONGO</option>
+	<option value="647">REPUBLICA DOMINICANA</option>
+	<option value="650">REUNION</option>
+	<option value="675">RUANDA</option>
+	<option value="670">RUMANIA</option>
+	<option value="673">RUSIA</option>
+	<option value="680">SAHARA OCCIDENTAL</option>
+	<option value="699">SAMOA</option>
+	<option value="698">SAMOA AMERICANA</option>
+	<option value="652">SAN BARTOLOME</option>
+	<option value="695">SAN CRISTOBAL Y NIEVES</option>
+	<option value="701">SAN MARINO</option>
+	<option value="663">SAN MARTIN (FRANCESA)</option>
+	<option value="534">SAN MARTIN (HOLANDESA)</option>
+	<option value="682">SAN PEDRO Y MIQUELON</option>
+	<option value="705">SAN VICENTE Y LAS GRANADINAS</option>
+	<option value="708">SANTA HELENA</option>
+	<option value="715">SANTA LUCIA</option>
+	<option value="720">SANTO TOME Y PRINCIPE</option>
+	<option value="728">SENEGAL</option>
+	<option value="729">SERBIA</option>
+	<option value="731">SEYCHELLES</option>
+	<option value="735">SIERRA LEONA</option>
+	<option value="741">SINGAPUR</option>
+	<option value="744">SIRIA</option>
+	<option value="748">SOMALIA</option>
+	<option value="750">SRI LANKA</option>
+	<option value="773">SUAZILANDIA</option>
+	<option value="756">SUDAFRICA</option>
+	<option value="759">SUDAN</option>
+	<option value="903">SUDAN DEL SUR</option>
+	<option value="764">SUECIA</option>
+	<option value="767">SUIZA</option>
+	<option value="770">SURINAM</option>
+	<option value="730">SVALBARD Y JAN MAYEN</option>
+	<option value="776">TAILANDIA</option>
+	<option value="218">TAIWAN</option>
+	<option value="780">TANZANIA</option>
+	<option value="775">TAYIKISTAN</option>
+	<option value="778">TERRIT. BRITANICO EN ANTARTIDA</option>
+	<option value="779">TERRITORIO BRITANICO DEL OCEANO INDICO</option>
+	<option value="781">TERRITORIOS AUSTRALES FRANCESES</option>
+	<option value="783">TIMOR ORIENTAL</option>
+	<option value="800">TOGO</option>
+	<option value="812">TOKELAU</option>
+	<option value="810">TONGA</option>
+	<option value="815">TRINIDAD Y TOBAGO</option>
+	<option value="820">TUNEZ</option>
+	<option value="829">TURKMENISTAN</option>
+	<option value="827">TURQUIA</option>
+	<option value="828">TUVALU</option>
+	<option value="830">UCRANIA</option>
+	<option value="833">UGANDA</option>
+	<option value="845">URUGUAY</option>
+	<option value="847">UZBEKISTAN</option>
+	<option value="849">VANUATU</option>
+	<option value="850">VENEZUELA</option>
+	<option value="855">VIETNAM</option>
+	<option value="394">WALLIS Y FUTUNA</option>
+	<option value="880">YEMEN</option>
+	<option value="920">YIBUTI</option>
+	<option value="890">ZAMBIA</option>
+	<option value="892">ZIMBABUE</option>
+</select></td>
+<td><span class="etiqueta">Pa&iacute;s pr&oacute;ximo Destino*:</span></td>
+<td><select id="cargueFormHospedaje:destino" name="cargueFormHospedaje:destino" class="combo" size="1" onchange="A4J.AJAX.Submit('cargueFormHospedaje',event,{'control':this,'similarityGroupingId':'cargueFormHospedaje:j_id855','parameters':{'cargueFormHospedaje:j_id855':'cargueFormHospedaje:j_id855','ajaxSingle':'cargueFormHospedaje:destino'} } )">	<option value="" selected="selected">Seleccionar</option>
+	<option value="13">AFGANISTAN</option>
+	<option value="384">&Aring;LAND</option>
+	<option value="17">ALBANIA</option>
+	<option value="23">ALEMANIA</option>
+	<option value="37">ANDORRA</option>
+	<option value="40">ANGOLA</option>
+	<option value="895">ANGUILA</option>
+	<option value="143">ANTARTIDA</option>
+	<option value="43">ANTIGUA Y BARBUDA</option>
+	<option value="44">ANTILLAS NEERLANDESAS</option>
+	<option value="997">APATRIDA</option>
+	<option value="55">ARABIA SAUDITA</option>
+	<option value="59">ARGELIA</option>
+	<option value="63">ARGENTINA</option>
+	<option value="65">ARMENIA</option>
+	<option value="67">ARUBA</option>
+	<option value="448">ARY MACEDONIA</option>
+	<option value="69">AUSTRALIA</option>
+	<option value="72">AUSTRIA</option>
+	<option value="75">AZERBAIYAN</option>
+	<option value="77">BAHAMAS</option>
+	<option value="80">BAHREIN</option>
+	<option value="81">BANGLADESH</option>
+	<option value="83">BARBADOS</option>
+	<option value="87">BELGICA</option>
+	<option value="88">BELICE</option>
+	<option value="89">BENIN</option>
+	<option value="90">BERMUDAS</option>
+	<option value="85">BIELORRUSIA</option>
+	<option value="97">BOLIVIA</option>
+	<option value="535">BONAIRE-SAN EUSTAQUIO Y SABA</option>
+	<option value="99">BOSNIA Y HERZEGOVINA</option>
+	<option value="101">BOTSUANA</option>
+	<option value="105">BRASIL</option>
+	<option value="108">BRUNEI</option>
+	<option value="111">BULGARIA</option>
+	<option value="113">BURKINA FASO</option>
+	<option value="115">BURUNDI</option>
+	<option value="117">BUTAN</option>
+	<option value="127">CABO VERDE</option>
+	<option value="141">CAMBOYA</option>
+	<option value="145">CAMERUN</option>
+	<option value="149">CANADA</option>
+	<option value="151">CHAD</option>
+	<option value="211">CHILE</option>
+	<option value="215">CHINA</option>
+	<option value="221">CHIPRE</option>
+	<option value="717">CIUDAD DEL VATICANO</option>
+	<option value="169">COLOMBIA</option>
+	<option value="171">COMORAS</option>
+	<option value="651">COREA DEL NORTE</option>
+	<option value="190">COREA DEL SUR</option>
+	<option value="193">COSTA DE MARFIL</option>
+	<option value="196">COSTA RICA</option>
+	<option value="198">CROACIA</option>
+	<option value="199">CUBA</option>
+	<option value="201">CURAZAO</option>
+	<option value="232">DINAMARCA</option>
+	<option value="235">DOMINICA</option>
+	<option value="239">ECUADOR</option>
+	<option value="240">EGIPTO</option>
+	<option value="242">EL SALVADOR</option>
+	<option value="244">EMIRATOS ARABES UNIDOS</option>
+	<option value="246">ERITREA</option>
+	<option value="247">ESLOVAQUIA</option>
+	<option value="248">ESLOVENIA</option>
+	<option value="245">ESPA&Ntilde;A</option>
+	<option value="249">ESTADOS UNIDOS</option>
+	<option value="251">ESTONIA</option>
+	<option value="253">ETIOPIA</option>
+	<option value="267">FILIPINAS</option>
+	<option value="271">FINLANDIA</option>
+	<option value="255">FIYI</option>
+	<option value="275">FRANCIA</option>
+	<option value="281">GABON</option>
+	<option value="285">GAMBIA</option>
+	<option value="287">GEORGIA</option>
+	<option value="289">GHANA</option>
+	<option value="293">GIBRALTAR</option>
+	<option value="297">GRANADA</option>
+	<option value="301">GRECIA</option>
+	<option value="315">GROENLANDIA</option>
+	<option value="338">GUADALUPE</option>
+	<option value="339">GUAM</option>
+	<option value="317">GUATEMALA</option>
+	<option value="340">GUAYANA FRANCESA</option>
+	<option value="146">GUERNSEY</option>
+	<option value="329">GUINEA</option>
+	<option value="331">GUINEA ECUATORIAL</option>
+	<option value="334">GUINEA-BISSAU</option>
+	<option value="325">GUYANA</option>
+	<option value="341">HAITI</option>
+	<option value="345">HONDURAS</option>
+	<option value="347">HONG KONG</option>
+	<option value="355">HUNGRIA</option>
+	<option value="361">INDIA</option>
+	<option value="365">INDONESIA</option>
+	<option value="372">IRAN</option>
+	<option value="369">IRAQ</option>
+	<option value="375">IRLANDA</option>
+	<option value="173">ISLA BOUVET</option>
+	<option value="380">ISLA DE MAN</option>
+	<option value="387">ISLA DE NAVIDAD</option>
+	<option value="379">ISLANDIA</option>
+	<option value="137">ISLAS CAIMAN</option>
+	<option value="178">ISLAS COCOS</option>
+	<option value="388">ISLAS COOK</option>
+	<option value="390">ISLAS FEROE</option>
+	<option value="904">ISLAS GEORGIAS DEL SUR Y SANDWICH DEL SU</option>
+	<option value="186">ISLAS HEARD Y MCDONALD</option>
+	<option value="191">ISLAS MALVINAS</option>
+	<option value="392">ISLAS MARIANAS DEL NORTE</option>
+	<option value="475">ISLAS MARSHALL</option>
+	<option value="381">ISLAS PITCAIRN</option>
+	<option value="395">ISLAS SALOMON</option>
+	<option value="900">ISLAS TURCAS Y CAICOS</option>
+	<option value="200">ISLAS ULTRAMARINAS DE ESTADOS UNIDOS</option>
+	<option value="866">ISLAS VIRGENES BRITANICAS</option>
+	<option value="867">ISLAS VIRGENES ESTADOUNIDENSES</option>
+	<option value="383">ISRAEL</option>
+	<option value="386">ITALIA</option>
+	<option value="391">JAMAICA</option>
+	<option value="399">JAPON</option>
+	<option value="160">JERSEY</option>
+	<option value="403">JORDANIA</option>
+	<option value="406">KAZAJISTAN</option>
+	<option value="410">KENIA</option>
+	<option value="412">KIRGUISTAN</option>
+	<option value="411">KIRIBATI</option>
+	<option value="413">KUWAIT</option>
+	<option value="420">LAOS</option>
+	<option value="426">LESOTO</option>
+	<option value="428">LETONIA</option>
+	<option value="431">LIBANO</option>
+	<option value="434">LIBERIA</option>
+	<option value="438">LIBIA</option>
+	<option value="441">LIECHTENSTEIN</option>
+	<option value="429">LITUANIA</option>
+	<option value="442">LUXEMBURGO</option>
+	<option value="447">MACAO</option>
+	<option value="450">MADAGASCAR</option>
+	<option value="455">MALASIA</option>
+	<option value="458">MALAWI</option>
+	<option value="461">MALDIVAS</option>
+	<option value="464">MALI</option>
+	<option value="467">MALTA</option>
+	<option value="474">MARRUECOS</option>
+	<option value="490">MARTINICA</option>
+	<option value="485">MAURICIO</option>
+	<option value="488">MAURITANIA</option>
+	<option value="494">MAYOTTE</option>
+	<option value="493">MEXICO</option>
+	<option value="503">MICRONESIA</option>
+	<option value="495">MOLDAVIA</option>
+	<option value="496">MONACO</option>
+	<option value="497">MONGOLIA</option>
+	<option value="499">MONTENEGRO</option>
+	<option value="501">MONTSERRAT</option>
+	<option value="505">MOZAMBIQUE</option>
+	<option value="507">MYANMAR</option>
+	<option value="981">NACIONES UNIDAS</option>
+	<option value="512">NAMIBIA</option>
+	<option value="508">NAURU</option>
+	<option value="517">NEPAL</option>
+	<option value="521">NICARAGUA</option>
+	<option value="528">NIGER</option>
+	<option value="525">NIGERIA</option>
+	<option value="531">NIUE</option>
+	<option value="996">NO ESPECIFICADO</option>
+	<option value="163">NORFOLK</option>
+	<option value="538">NORUEGA</option>
+	<option value="539">NUEVA CALEDONIA</option>
+	<option value="540">NUEVA ZELANDA</option>
+	<option value="542">OMAN</option>
+	<option value="573">PAISES BAJOS</option>
+	<option value="576">PAKISTAN</option>
+	<option value="578">PALAOS</option>
+	<option value="600">PALESTINA (ANP)</option>
+	<option value="580">PANAMA</option>
+	<option value="582">PAPUA NUEVA GUINEA</option>
+	<option value="586">PARAGUAY</option>
+	<option value="589">PERU</option>
+	<option value="609">POLINESIA FRANCESA</option>
+	<option value="603">POLONIA</option>
+	<option value="607">PORTUGAL</option>
+	<option value="611">PUERTO RICO</option>
+	<option value="618">QATAR</option>
+	<option value="628">REINO UNIDO</option>
+	<option value="998">REPUBLICA CENTROAFRICANA</option>
+	<option value="207">REPUBLICA CHECA</option>
+	<option value="414">REPUBLICA DE KOSOVO</option>
+	<option value="170">REPUBLICA DEL CONGO</option>
+	<option value="177">REPUBLICA DEMOCRATICA DEL CONGO</option>
+	<option value="647">REPUBLICA DOMINICANA</option>
+	<option value="650">REUNION</option>
+	<option value="675">RUANDA</option>
+	<option value="670">RUMANIA</option>
+	<option value="673">RUSIA</option>
+	<option value="680">SAHARA OCCIDENTAL</option>
+	<option value="699">SAMOA</option>
+	<option value="698">SAMOA AMERICANA</option>
+	<option value="652">SAN BARTOLOME</option>
+	<option value="695">SAN CRISTOBAL Y NIEVES</option>
+	<option value="701">SAN MARINO</option>
+	<option value="663">SAN MARTIN (FRANCESA)</option>
+	<option value="534">SAN MARTIN (HOLANDESA)</option>
+	<option value="682">SAN PEDRO Y MIQUELON</option>
+	<option value="705">SAN VICENTE Y LAS GRANADINAS</option>
+	<option value="708">SANTA HELENA</option>
+	<option value="715">SANTA LUCIA</option>
+	<option value="720">SANTO TOME Y PRINCIPE</option>
+	<option value="728">SENEGAL</option>
+	<option value="729">SERBIA</option>
+	<option value="731">SEYCHELLES</option>
+	<option value="735">SIERRA LEONA</option>
+	<option value="741">SINGAPUR</option>
+	<option value="744">SIRIA</option>
+	<option value="748">SOMALIA</option>
+	<option value="750">SRI LANKA</option>
+	<option value="773">SUAZILANDIA</option>
+	<option value="756">SUDAFRICA</option>
+	<option value="759">SUDAN</option>
+	<option value="903">SUDAN DEL SUR</option>
+	<option value="764">SUECIA</option>
+	<option value="767">SUIZA</option>
+	<option value="770">SURINAM</option>
+	<option value="730">SVALBARD Y JAN MAYEN</option>
+	<option value="776">TAILANDIA</option>
+	<option value="218">TAIWAN</option>
+	<option value="780">TANZANIA</option>
+	<option value="775">TAYIKISTAN</option>
+	<option value="778">TERRIT. BRITANICO EN ANTARTIDA</option>
+	<option value="779">TERRITORIO BRITANICO DEL OCEANO INDICO</option>
+	<option value="781">TERRITORIOS AUSTRALES FRANCESES</option>
+	<option value="783">TIMOR ORIENTAL</option>
+	<option value="800">TOGO</option>
+	<option value="812">TOKELAU</option>
+	<option value="810">TONGA</option>
+	<option value="815">TRINIDAD Y TOBAGO</option>
+	<option value="820">TUNEZ</option>
+	<option value="829">TURKMENISTAN</option>
+	<option value="827">TURQUIA</option>
+	<option value="828">TUVALU</option>
+	<option value="830">UCRANIA</option>
+	<option value="833">UGANDA</option>
+	<option value="845">URUGUAY</option>
+	<option value="847">UZBEKISTAN</option>
+	<option value="849">VANUATU</option>
+	<option value="850">VENEZUELA</option>
+	<option value="855">VIETNAM</option>
+	<option value="394">WALLIS Y FUTUNA</option>
+	<option value="880">YEMEN</option>
+	<option value="920">YIBUTI</option>
+	<option value="890">ZAMBIA</option>
+	<option value="892">ZIMBABUE</option>
+</select></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="rich-panel " id="cargueFormHospedaje:j_id856"><div class="rich-panel-body " id="cargueFormHospedaje:j_id856_body"><table id="cargueFormHospedaje:panelHotelesForm2" class="panel">
+<tbody>
+<tr>
+<td><span id="cargueFormHospedaje:dptoCuidadOrigenP"></span></td>
+</tr>
+<tr>
+<td><span id="cargueFormHospedaje:dptoCiudadDestinoD"></span></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+						<br /><table id="cargueFormHospedaje:panelHotelesForm3" class="panel">
+<tbody>
+<tr>
+<td><span id="cargueFormHospedaje:panelHotelesForm1">
+								<center><input id="cargueFormHospedaje:j_id877" name="cargueFormHospedaje:j_id877" onclick="A4J.AJAX.Submit('cargueFormHospedaje',event,{'oncomplete':function(request,event,data){jQuery(selectCodeFields()).add(selectCitiFields()).attr('disabled',true);},'similarityGroupingId':'cargueFormHospedaje:j_id877','parameters':{'cargueFormHospedaje:j_id877':'cargueFormHospedaje:j_id877'} } );return false;" value="Agregar Registro" type="button" />
+								</center>
+								<br />
+								<br />
+								<center><table id="cargueFormHospedaje:bottonGuardarAloj">
+<tbody>
+</tbody>
+</table>
+
+								</center></span></td>
+</tr>
+</tbody>
+</table>
+<table id="cargueFormHospedaje:panelHotelesForm33" class="panel">
+<tbody>
+</tbody>
+</table>
+</span><table id="cargueFormHospedaje:panelHotelesInfo" class="panel">
+<tbody>
+<tr>
+<td><span class="etiqueta"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta" style="COLOR: #ff0000;"></span></td>
+</tr>
+</tbody>
+</table>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></td>
+
+
+
+
+			<!-- TRANSPORTE NACIONAL -->
+			<!-- Fin TRANSPORTE NACIONAL -->
+			<!-- CENTROS CARCELARIOS Y DE RECLUSION -->
+			<!-- Fin Centros Carcelarios --></tr></tbody></table>
+
+		<!-- Panel para previsualización de Genera Beneficio --><div id="detallePanelGB" style="display: none;"><input autocomplete="off" id="detallePanelGBOpenedState" name="detallePanelGBOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelGBContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelGBDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelGBFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelGBCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelGBShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelGBContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelGBContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelGBHeader" style="white-space: nowrap;">Vinculaci&oacute;n o Contrataci&oacute;n de Extranjeros - Genera Beneficio</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleGBFormm" name="detalleGBFormm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleGBFormm" value="detalleGBFormm" />
+<table class="rich-panel panel">
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span id="detalleGBFormm:lblFechaMovimiento" class="etiqueta">Fecha de Inicio de Labores:</span></td>
+<td><span id="detalleGBFormm:fechaInicioLabores" class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Ocupaci&oacute;n o Profesi&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Contrato:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span class="texto">:</span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Direcci&oacute;n de Residencia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tel&eacute;fono en Colombia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Celular en Colombia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Correo Electr&oacute;nico:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Categor&iacute;a de Visa o Permiso de Ingreso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Actividad:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de visa o permiso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de ingreso al pais o fecha de expedici&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Vencimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleGBFormm:j_id1344" value="Cerrar" onclick="document.getElementById('detallePanelGB').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelGBCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelGBLastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelGB',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+		<!-- Panel para previsualización de Académicas --><div id="detallePanelACA" style="display: none;"><input autocomplete="off" id="detallePanelACAOpenedState" name="detallePanelACAOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelACAContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelACADiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelACAFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelACACDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelACAShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelACAContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelACAContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelACAHeader" style="white-space: nowrap;">Acad&eacute;micas</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleACAFormm" name="detalleACAFormm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleACAFormm" value="detalleACAFormm" />
+<table class="rich-panel panel">
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span id="detalleACAFormm:lblFechaMovimientoACA" class="etiqueta">Fecha de Inicio de Clases:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Ocupaci&oacute;n o Profesi&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Matr&iacute;cula:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span id="detalleACAFormm:primerApellido" class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span id="detalleACAFormm:segundoApellido" class="texto"></span></td>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span id="detalleACAFormm:nombres" class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Direcci&oacute;n de Residencia:</span></td>
+<td><span id="detalleACAFormm:direccion" class="texto"></span></td>
+<td><span class="etiqueta">Tel&eacute;fono en Colombia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Celular en Colombia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Correo Electr&oacute;nico:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Categor&iacute;a de Visa o Permiso de Ingreso:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Actividad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">N&uacute;mero de visa o permiso:</span></td>
+<td><span id="detalleACAFormm:numeroVisa" class="texto"></span></td>
+<td><span class="etiqueta">Fecha de ingreso al pais o fecha de expedici&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Vencimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Observaciones:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleACAFormm:j_id1392" value="Cerrar" onclick="document.getElementById('detallePanelACA').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelACACursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelACALastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelACA',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+		<!-- Panel para previsualización de Religiosas --><div id="detallePanelREL" style="display: none;"><input autocomplete="off" id="detallePanelRELOpenedState" name="detallePanelRELOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelRELContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelRELDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelRELFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelRELCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelRELShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelRELContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelRELContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelRELHeader" style="white-space: nowrap;">Religiosas</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleRELForm" name="detalleRELForm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleRELForm" value="detalleRELForm" />
+<table>
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span id="detalleRELForm:lblFinLabores" class="etiqueta">Fecha de terminaci&oacute;n de labores o actividad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Ocupaci&oacute;n o Profesi&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Direcci&oacute;n de Residencia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tel&eacute;fono en Colombia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Celular en Colombia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Correo Electr&oacute;nico:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Categor&iacute;a de Visa o Permiso de Ingreso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Actividad:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de visa o permiso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de ingreso al pais o fecha de expedici&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Vencimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleRELForm:j_id1441" value="Cerrar" onclick="document.getElementById('detallePanelREL').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelRELCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelRELLastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelREL',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+		<!-- Panel para la previsualización de Cooperantes y Vol. --><div id="detallePanelCOOP" style="display: none;"><input autocomplete="off" id="detallePanelCOOPOpenedState" name="detallePanelCOOPOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelCOOPContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelCOOPDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelCOOPFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelCOOPCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelCOOPShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelCOOPContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelCOOPContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelCOOPHeader" style="white-space: nowrap;">Cooperantes y Voluntarios</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleCOOPForm" name="detalleCOOPForm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleCOOPForm" value="detalleCOOPForm" />
+<table class="rich-panel panel">
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de terminaci&oacute;n de labores o actividad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Ocupaci&oacute;n o Profesi&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Direcci&oacute;n de Residencia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Tel&eacute;fono en Colombia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Celular en Colombia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Correo Electr&oacute;nico:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Categor&iacute;a de Visa o Permiso de Ingreso:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Actividad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">N&uacute;mero de visa o permiso:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de ingreso al pais o fecha de expedici&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Vencimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleCOOPForm:j_id1491" value="Cerrar" onclick="document.getElementById('detallePanelCOOP').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelCOOPCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelCOOPLastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelCOOP',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+		<!-- Panel para la previsualización de registros de Salud --><div id="detallePanelSALUD" style="display: none;"><input autocomplete="off" id="detallePanelSALUDOpenedState" name="detallePanelSALUDOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelSALUDContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelSALUDDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelSALUDFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelSALUDCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelSALUDShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelSALUDContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelSALUDContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelSALUDHeader" style="white-space: nowrap;">Servicios de Salud</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleSALUDForm" name="detalleSALUDForm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleSALUDForm" value="detalleSALUDForm" />
+<table>
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Ocupaci&oacute;n o Profesi&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Direcci&oacute;n de Residencia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tel&eacute;fono en Colombia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Celular en Colombia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Correo Electr&oacute;nico:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Categor&iacute;a de Visa o Permiso de Ingreso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Actividad:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de visa o permiso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de ingreso al pais o fecha de expedici&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Vencimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Extranjero Fallecido</span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleSALUDForm:j_id1542" value="Cerrar" onclick="document.getElementById('detallePanelSALUD').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelSALUDCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelSALUDLastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelSALUD',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+		<!-- Panel para la previsualización de Alojamiento y Hospedaje --><div id="detallePanelALO" style="display: none;"><input autocomplete="off" id="detallePanelALOOpenedState" name="detallePanelALOOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelALOContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelALODiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelALOFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelALOCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelALOShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelALOContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelALOContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelALOHeader" style="white-space: nowrap;">Alojamiento y Hospedaje</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleALOForm" name="detalleALOForm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleALOForm" value="detalleALOForm" />
+<table id="detalleALOForm:panelHoteles" class="rich-panel panel">
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Pa&iacute;s pr&oacute;ximo Destino:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Pa&iacute;s de Procedencia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleALOForm:j_id1569" value="Cerrar" onclick="document.getElementById('detallePanelALO').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelALOCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelALOLastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelALO',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+
+
+		<!-- Panel para previsualización de TRANSPORTE NACIONAL --><div id="detallePanelTRANSPORTENACIONAL" style="display: none;"><input autocomplete="off" id="detallePanelTRANSPORTENACIONALOpenedState" name="detallePanelTRANSPORTENACIONALOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelTRANSPORTENACIONALContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelTRANSPORTENACIONALDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelTRANSPORTENACIONALFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelTRANSPORTENACIONALCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelTRANSPORTENACIONALShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelTRANSPORTENACIONALContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelTRANSPORTENACIONALContentTable" style="width: 650px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelTRANSPORTENACIONALHeader" style="white-space: nowrap;">Transporte Nacional (Terrestre, Fluvial, Mar&iacute;timo, A&eacute;reo)</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleTRANSPORTENACIONALForm" name="detalleTRANSPORTENACIONALForm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleTRANSPORTENACIONALForm" value="detalleTRANSPORTENACIONALForm" />
+<table>
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">G&eacute;nero:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Direcci&oacute;n de Residencia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Tel&eacute;fono en Colombia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha del Viaje:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Hora del Viaje:</span></td>
+<td><span class="texto">:</span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Modo de Transporte:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Tipo de Transporte:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Identificaci&oacute;n del Modo de Transporte:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Pa&iacute;s Origen Viaje:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Pa&iacute;s Destino Viaje:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleTRANSPORTENACIONALForm:j_id1617" value="Cerrar" onclick="document.getElementById('detallePanelTRANSPORTENACIONAL').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelTRANSPORTENACIONALCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelTRANSPORTENACIONALLastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelTRANSPORTENACIONAL',
+				{
+					width: 650,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+
+		<!-- Panel para previsualización de Centros Carcelarios --><div id="detallePanelCARCEL" style="display: none;"><input autocomplete="off" id="detallePanelCARCELOpenedState" name="detallePanelCARCELOpenedState" type="hidden" /><div class="rich-modalpanel " id="detallePanelCARCELContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="detallePanelCARCELDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="detallePanelCARCELFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="detallePanelCARCELCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="detallePanelCARCELShadowDiv"></div><div class=" rich-mpnl-content" id="detallePanelCARCELContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="detallePanelCARCELContentTable" style="width: 650px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="detallePanelCARCELHeader" style="white-space: nowrap;">Centros Carcelarios y de Reclusi&oacute;n</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="detalleCARCELForm" name="detalleCARCELForm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="detalleCARCELForm" value="detalleCARCELForm" />
+<table>
+<tbody>
+<tr>
+<td><span class="etiqueta">Tipo de Documento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de Documento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Primer Apellido:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Segundo Apellido:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Nombres:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Nacionalidad:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Pa&iacute;s de Procedencia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Autoridad que Emite la Decisi&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Delito Penal:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Nacimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tipo de Movimiento:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Motivo Movimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Direcci&oacute;n de Residencia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">G&eacute;nero:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Ocupaci&oacute;n o Profesi&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span id="detalleCARCELForm:fechaIngresoCentroCarcelario" class="etiqueta">Fecha Ingreso al Centro Carcelario:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tel&eacute;fono en Colombia:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Celular en Colombia:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Correo Electr&oacute;nico:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Categor&iacute;a de Visa o Permiso de Ingreso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Actividad:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">N&uacute;mero de visa o permiso:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Fecha de ingreso al pais o fecha de expedici&oacute;n:</span></td>
+<td><span class="texto"></span></td>
+<td><span class="etiqueta">Fecha de Vencimiento:</span></td>
+<td><span class="texto"></span></td>
+</tr>
+<tr>
+<td><span class="etiqueta">Tiempo de Condena (En meses):</span></td>
+<td><span class="texto"></span></td>
+</tr>
+</tbody>
+</table>
+
+				<br />
+				<center><input type="submit" name="detalleCARCELForm:j_id1676" value="Cerrar" onclick="document.getElementById('detallePanelCARCEL').component.hide(); return false;" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="detallePanelCARCELCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="detallePanelCARCELLastHref"></button></div><script type="text/javascript">new ModalPanel('detallePanelCARCEL',
+				{
+					width: 650,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+		<!-- Modal seleccionar si extrajero esta registrado como fallecido --><div id="modalExtrajeroFallecido" style="display: none;"><input autocomplete="off" id="modalExtrajeroFallecidoOpenedState" name="modalExtrajeroFallecidoOpenedState" type="hidden" /><div class="rich-modalpanel " id="modalExtrajeroFallecidoContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="modalExtrajeroFallecidoDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="modalExtrajeroFallecidoFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="modalExtrajeroFallecidoCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="modalExtrajeroFallecidoShadowDiv"></div><div class=" rich-mpnl-content" id="modalExtrajeroFallecidoContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="modalExtrajeroFallecidoContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="modalExtrajeroFallecidoHeader" style="white-space: nowrap;">Cargar Informaci&oacute;n Salud</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="formModalExtrajeroFallecido" name="formModalExtrajeroFallecido" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="formModalExtrajeroFallecido" value="formModalExtrajeroFallecido" />
+
+				<center><span class="etiqueta">&iquest;El extranjero registrado es fallecido?</span>
+					<br /> <br /><table id="formModalExtrajeroFallecido:radio" class="radio">
+	<tr>
+<td>
+<input type="radio" name="formModalExtrajeroFallecido:radio" id="formModalExtrajeroFallecido:radio:0" value="1" /><label for="formModalExtrajeroFallecido:radio:0"> SI</label></td>
+<td>
+<input type="radio" name="formModalExtrajeroFallecido:radio" id="formModalExtrajeroFallecido:radio:1" value="0" /><label for="formModalExtrajeroFallecido:radio:1"> NO</label></td>
+	</tr>
+</table>
+					<br /> <br /><input type="submit" name="formModalExtrajeroFallecido:j_id1686" value="Aceptar" onclick="document.getElementById('modalExtrajeroFallecido').component.hide();" class="boton" />
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="modalExtrajeroFallecidoCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="modalExtrajeroFallecidoLastHref"></button></div><script type="text/javascript">new ModalPanel('modalExtrajeroFallecido',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+
+
+		<!-- Modal confirmacion de eliminacion de registro --><div id="modalConfirmacion" style="display: none;"><input autocomplete="off" id="modalConfirmacionOpenedState" name="modalConfirmacionOpenedState" type="hidden" /><div class="rich-modalpanel " id="modalConfirmacionContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="modalConfirmacionDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="modalConfirmacionFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="modalConfirmacionCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="modalConfirmacionShadowDiv"></div><div class=" rich-mpnl-content" id="modalConfirmacionContentDiv"><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="modalConfirmacionContentTable" style="width: 450px;height: 1px;"><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="modalConfirmacionHeader" style="white-space: nowrap;">Cargar Informaci&oacute;n Salud</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="formModalConfirmacion" name="formModalConfirmacion" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="formModalConfirmacion" value="formModalConfirmacion" />
+
+				<center><table>
+<tbody>
+<tr>
+<td><span class="etiqueta">Desea eliminar el registro de la lista:</span></td>
+</tr>
+<tr>
+<td>
+						<br /></td>
+</tr>
+<tr>
+<td><table id="formModalConfirmacion:radio" class="radio">
+	<tr>
+<td>
+<input type="radio" name="formModalConfirmacion:radio" id="formModalConfirmacion:radio:0" value="1" /><label for="formModalConfirmacion:radio:0"> SI</label></td>
+<td>
+<input type="radio" name="formModalConfirmacion:radio" id="formModalConfirmacion:radio:1" value="0" /><label for="formModalConfirmacion:radio:1"> NO</label></td>
+	</tr>
+</table></td>
+</tr>
+<tr>
+<td>
+						<br /></td>
+</tr>
+<tr>
+<td><input class="boton" id="formModalConfirmacion:j_id1697" name="formModalConfirmacion:j_id1697" onclick="A4J.AJAX.Submit('formModalConfirmacion',event,{'oncomplete':function(request,event,data){document.getElementById('modalConfirmacion').component.hide(); return false;},'similarityGroupingId':'formModalConfirmacion:j_id1697','parameters':{'formModalConfirmacion:j_id1697':'formModalConfirmacion:j_id1697'} } );return false;" value="Aceptar" type="button" /></td>
+</tr>
+</tbody>
+</table>
+
+				</center><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="modalConfirmacionCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="modalConfirmacionLastHref"></button></div><script type="text/javascript">new ModalPanel('modalConfirmacion',
+				{
+					width: 450,
+					height: -1,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="headerExterna" colspan="2" style="vertical-align: top;"><table id="footer" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+			<image src="/sire/imagenes/Copyright.jpg" style="position:absolute; top:0; left:0; width:100%; height:auto; z-index:0;"/></td>
+</tr>
+</tbody>
+</table>
+
+							</td>
+					</tr>
+				</table>
+<form id="messagesForm" name="messagesForm" method="post" action="/sire/pages/empresas/cargueInformacion.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="messagesForm" value="messagesForm" />
+<div id="messagesForm:messagesPanel" style="display: none;"><input autocomplete="off" id="messagesForm:messagesPanelOpenedState" name="messagesForm:messagesPanelOpenedState" type="hidden" /><div class="rich-modalpanel " id="messagesForm:messagesPanelContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="messagesForm:messagesPanelDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="messagesForm:messagesPanelFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="messagesForm:messagesPanelCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="messagesForm:messagesPanelShadowDiv"></div><div class=" rich-mpnl-content" id="messagesForm:messagesPanelContentDiv"><div class="rich-mpnl-text rich-mpnl-controls "><img id="messagesForm:hidelinkMessages" src="/sire/imagenes/modal/close.png" class="hidelink" /><script type="text/javascript">Richfaces.componentControl.attachAvailable('#messagesForm\\:hidelinkMessages','onclick','#messagesForm\\:messagesPanel','hide')</script></div><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="messagesForm:messagesPanelContentTable" style="width: 430px;height: 200px;"><tr style="height: 99%"><td class="rich-mpnl-body" valign="top"><span id="messagesForm:j_id1703"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+						<image src="/sire/imagenes/cabezotes/Banner_pop_up.jpg" style="width:100%;height:70px;left: 10%;top: 2%;z-index: 1;"/></td>
+</tr>
+</tbody>
+</table>
+</span><div class="rich-panel messagesPanel" id="messagesForm:j_id1708"><div class="rich-panel-body " id="messagesForm:j_id1708_body"><dl id="messagesForm:j_id1709" class="rich-messages" style="display: none; "><dt></dt></dl></div></div>
+			<br />
+			<center><input id="messagesForm:messagesButton" type="submit" name="messagesForm:messagesButton" value="Aceptar" onclick="document.getElementById('messagesForm:messagesPanel').component.hide(); return false;" class="boton" />
+			</center></td></tr></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="messagesForm:messagesPanelCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="messagesForm:messagesPanelLastHref"></button></div><script type="text/javascript">new ModalPanel('messagesForm:messagesPanel',
+				{
+					width: 430,
+					height: 200,
+
+					minWidth: -1,
+					minHeight: -1,
+
+					resizeable: false,
+					moveable: true,
+
+					left: "auto",
+					top: "auto",
+
+					zindex: 100,onresize: '',onmove: '',onshow: '',onhide: '',onbeforeshow: '',onbeforehide: '',
+					domElementAttachment: "",				
+					keepVisualState: false,
+					showWhenRendered: false,
+					selectBehavior: "disable",
+
+					autosized: true,
+					overlapEmbedObjects: false});</script></div><script type="text/javascript"></script></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id4" />
+</form>
+			</div>
+		</center>
+
+	</body>
+</html>

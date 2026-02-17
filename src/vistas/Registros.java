@@ -8,7 +8,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
-import vistas.Recepciones;
+//import vistas.Recepciones;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -47,11 +47,11 @@ import modelo.Check_In;
 import modelo.Cliente;
 import modelo.Contable;
 import modelo.Hotel;
-import modelo.MensajesWATest;
+//import modelo.MensajesWATest;
 import modelo.MensajesWATest2;
 import modelo.ReporteSire;
 import modelo.UsuarioOperando;
-import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebDriver;
 
 public final class Registros extends javax.swing.JDialog implements Runnable {
 
@@ -74,7 +74,7 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
     private boolean saliendo = false;
     ImageIcon icon = new ImageIcon("src/img/pequeño.png");
     String nacionalidadSire = "";
-    private boolean botonWaClickeado = false;
+    //private boolean botonWaClickeado = false;
     Cliente clienteGlobal = new Cliente();
     private boolean elMensajeYaFueEnviado = false;
 
@@ -480,51 +480,43 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
 
     public void mensajeWaRes(int idCliente) {
         System.out.println(">>> ENTRANDO A mensajeWaRes() con idCliente: " + idCliente);
-        boolean camposVerificados = verificarCampos();
-        System.out.println("verificarCampos() retorna: " + camposVerificados);
-        if (camposVerificados) {
-            System.out.println("Ocultando ventana de registro y llamando a enviarMensajeWA()...");
-            this.setVisible(false);
-            if (res != null) {
-                res.toFront();
-            }
-
-            CompletableFuture<String> resultado = enviarMensajeWA();
-            resultado.thenAccept(res -> {
-                SwingUtilities.invokeLater(() -> {
-
-                    if (clienteGlobal.getEstado_Verificacion().equals("No Verificado")) {
-
-                        con.actualizarEstadoVerificacion(idCliente, res);
-
-                    }
-
-                });
-            }).exceptionally(ex -> {
-                SwingUtilities.invokeLater(() -> {
-                    JOptionPane.showMessageDialog(this, "No se confirmo el ingreso con el cliente! " + ex, "Error", JOptionPane.ERROR_MESSAGE);
-                    // Aquí también actualizamos el estado en la base de datos en caso de una excepción
-                    if (clienteGlobal.getEstado_Verificacion().equals("") || clienteGlobal.getEstado_Verificacion() == null) {
-
-                        con.actualizarEstadoVerificacion(idCliente, "No Verificado");
-
-                    }
-                });
-                return null;
-            });
+        System.out.println("Ocultando ventana de registro y llamando a enviarMensajeWA()...");
+        this.setVisible(false);
+        if (res != null) {
+            res.toFront();
         }
+
+        CompletableFuture<String> resultado = enviarMensajeWA();
+        resultado.thenAccept(resultadoWa -> {
+            SwingUtilities.invokeLater(() -> {
+                System.out.println(">>> mensajeWaRes resultado: " + resultadoWa + ", elMensajeYaFueEnviado=" + elMensajeYaFueEnviado);
+                if (resultadoWa.equals("Verificado")) {
+                    con.actualizarEstadoVerificacion(idCliente, "Verificado");
+                } else if (clienteGlobal.getEstado_Verificacion().equals("No Verificado")
+                        || clienteGlobal.getEstado_Verificacion().isEmpty()) {
+                    con.actualizarEstadoVerificacion(idCliente, "No Verificado");
+                }
+            });
+        }).exceptionally(ex -> {
+            SwingUtilities.invokeLater(() -> {
+                JOptionPane.showMessageDialog(this, "No se confirmo el ingreso con el cliente! " + ex, "Error", JOptionPane.ERROR_MESSAGE);
+                if (clienteGlobal.getEstado_Verificacion().equals("")
+                        || clienteGlobal.getEstado_Verificacion() == null) {
+                    con.actualizarEstadoVerificacion(idCliente, "No Verificado");
+                }
+            });
+            return null;
+        });
     }
 
     public CompletableFuture<String> enviarMensajeWA() {
-        System.out.println(">>> ENTRANDO A enviarMensajeWA() - INICIANDO ENVIO ASINCRONO");
+
         return CompletableFuture.supplyAsync(() -> {
             String nombreCliente = "*" + regisnom.getText().split(" ")[0] + "*";
             String telefonoWA = txtIndicativo.getText() + registel.getText();
-            System.out.println("Telefono WhatsApp: " + telefonoWA);
-            System.out.println("Nombre cliente: " + nombreCliente);
+          
             construirMensajeWatsaap(nombreCliente);
-            System.out.println("Mensaje construido: " + MensajeWhatsApp);
-            System.out.println("Creando instancia de MensajesWATest2...");
+           
             MensajesWATest2 enviar = new MensajesWATest2();
             try {
                 System.out.println("Llamando a enviar.enviarMensaje()...");
@@ -533,6 +525,8 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
                 if (mensajeEnviado) {
                     jlbMensajeExitoso.setVisible(true);
                     btnVerificarWa.setVisible(false);
+                    elMensajeYaFueEnviado = true;
+                    estadoVerificacion = "Verificado";
 
                     return "Verificado";
 
@@ -549,11 +543,20 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
 
     public void registrar(String estadoVerificacion) {
 
+        // Validar que existe un turno activo antes de registrar
+        int idTurno = usus.getTurnoPresente();
+        if (idTurno <= 0) {
+            JOptionPane.showMessageDialog(this, 
+                "No hay un turno activo. Debe crear un turno antes de registrar clientes.\n" +
+                "Vaya a la pantalla principal y cree un nuevo turno.", 
+                "Turno Requerido", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         Cliente clienteARegistraR = new Cliente();
         Check_In chek_InARegistrar = new Check_In();
         Contable contableARegistrar = new Contable();
         String tipoMovimiento = "Entrada";
-        int idTurno = usus.getTurnoPresente();
         int idHotel = this.hotel.getIdHoteles();
         /*obtener el id del usuario que esta gestionando el registro*/
         String usuario = "";
@@ -620,8 +623,8 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
         }
         chek_InARegistrar.setHoraLlegada(hora + ":" + minutos + ":" + seg);
         chek_InARegistrar.setFechaSalida(sqlxSalida);
-        String destino = " ";
-        String procedencia = " ";
+        //String destino = " ";
+        //String procedencia = " ";
         if (cbxPaisProce.getSelectedItem().toString().equals("COLOMBIA")) {
             chek_InARegistrar.setProcedencia(cbxPaisProce.getSelectedItem().toString() + "-" + cbxDeparProce.getSelectedItem().toString() + "-" + cbxCiudadProce.getSelectedItem().toString());
         } else {
@@ -729,8 +732,10 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
 
         try {
 
-            //de aqui en adelante si el clienteGlobal tiene un tipo de documento diferente de cedula de ciudadania se reporta a sire
-            if (!clienteARegistraR.getTipo_Documento().equals("CÉDULA DE CIUDADANÍA") && !nacionalidadSire.equals("COLOMBIA")) {
+            // Reportar a SIRE si el cliente tiene nacionalidad extranjera (diferente a COLOMBIA)
+            // La nacionalidad determina si es extranjero, no el tipo de documento
+            // Ejemplos: Venezolano con cédula colombiana → Reportar | Colombiano con cédula de extranjería → No reportar
+            if (!nacionalidadSire.equals("COLOMBIA")) {
 
                 String paisProce = cbxPaisProce.getSelectedItem().toString();
                 String deparProce = "NA";
@@ -760,6 +765,12 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
                 manejarFlujoAsincronoParaExtranjeros(tipoMovimiento, fechaMovimiento, clienteARegistraR.getTipo_Documento(), clienteARegistraR.getFecha_Nacimiento().toString(),
                         clienteARegistraR.getNum_Documento(), primerApellido, segundoApellido, clienteARegistraR.getNombres(), nacionalidadSire, paisProce, deparProce, ciudadProce,
                         paisDest, deparDest, ciudadDest);
+                
+                // IMPORTANTE: Para extranjeros, el WhatsApp se gestiona dentro de 
+                // manejarFlujoAsincronoParaExtranjeros() (ya sea con o sin SIRE)
+                // Por eso hacemos return aquí para evitar el envío duplicado de WhatsApp
+                // que está al final de este método
+                return;
 
             }
 
@@ -790,14 +801,23 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
             String deparDest, String ciudadDest) {
 
         SwingUtilities.invokeLater(() -> {
+            ClassLoader classLoader = getClass().getClassLoader();
+            ImageIcon iconSire = new ImageIcon(classLoader.getResource("img/pequeño.png"));
+
+            String nombreHuesped = regisnom.getText().split(" ")[0];
+
             String[] opciones = {"GESTIONAR", "CANCELAR"};
             int seleccion = JOptionPane.showOptionDialog(
                     null,
-                    "¿Desea hacer el reporte al sistema SIRE de migración Colombia?",
-                    "Seleccione una opción",
+                    "El huésped " + nombreHuesped + " es de nacionalidad " + nacionalidad + ".\n\n"
+                    + "De acuerdo con la normativa colombiana, se debe\n"
+                    + "reportar su ingreso al sistema SIRE de Migración\n"
+                    + "Colombia.\n\n"
+                    + "¿Desea gestionar el reporte de entrada ahora?",
+                    "Reporte SIRE de Entrada",
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
-                    null, // icono
+                    iconSire,
                     opciones,
                     opciones[0]
             );
@@ -934,7 +954,7 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
         }
     }
 
-    public void visualizarJpnDest(JComboBox cbxpais, JComboBox cbxDepar, JComboBox cbxCiu, JPanel panel) {
+    public void visualizarJpnDest(JComboBox<String> cbxpais, JComboBox<String> cbxDepar, JComboBox<String> cbxCiu, JPanel panel) {
         Object pais = cbxpais.getSelectedItem();
         Object departamento = cbxDepar.getSelectedItem();
         Object ciudad = cbxCiu.getSelectedItem();
@@ -1029,12 +1049,38 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
     }
 
     public void procesoRegistro() {
+        System.out.println("[REGISTRO] ========== procesoRegistro() INICIADO ==========");
+        // PRIMERO: Verificar si hay una ventana de reporte SIRE abierta
+        // Esto se hace ANTES de cualquier otra validación o proceso
+        System.out.println("[REGISTRO] Verificando si hay ventana SIRE abierta...");
+        if (ReporteSire.hayVentanaAbierta()) {
+            System.out.println("[REGISTRO] ⚠ Intentó registrar con ventana SIRE abierta");
+            JOptionPane.showMessageDialog(this,
+                "⚠ REGISTRO SIRE PENDIENTE\n\n" +
+                "No se puede registrar un nuevo huésped hasta que\n" +
+                "complete el reporte SIRE anterior.\n\n" +
+                "Por favor:\n" +
+                "1. Complete el formulario SIRE que está abierto\n" +
+                "2. Haga clic en 'AGREGAR REGISTRO'\n" +
+                "3. Cierre la ventana del navegador\n" +
+                "4. Intente nuevamente el registro",
+                "Registro SIRE Pendiente",
+                JOptionPane.WARNING_MESSAGE);
+            
+            // Maximizar y traer al frente la ventana SIRE pendiente
+            ReporteSire.maximizarVentanaPendiente();
+            System.out.println("[REGISTRO] ✓ Proceso DETENIDO por ventana SIRE abierta");
+            return; // DETENER COMPLETAMENTE el proceso
+        }
+        
+        System.out.println("[REGISTRO] ✓ No hay ventana SIRE abierta, continuando...");
+        // SEGUNDO: Verificar campos y proceder con el registro
         if (verificarCampos()) {
             registrar(estadoVerificacion);
         }
     }
 
-    @SuppressWarnings("unchecked")
+    //@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -2158,7 +2204,7 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
     }//GEN-LAST:event_cbxNacionalidadKeyPressed
 
     private void btnVerificarWaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarWaActionPerformed
-        botonWaClickeado = true;
+        //botonWaClickeado = true;
         if (worker != null && !worker.isDone()) {
             JOptionPane.showMessageDialog(this, "Por favor, espera a que el proceso anterior termine.");
             return;

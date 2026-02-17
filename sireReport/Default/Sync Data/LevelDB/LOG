@@ -1,2 +1,3 @@
-2026/01/26-20:09:24.647 34d0 Creating DB C:\Users\CORE I5\Documents\NetBeansProjects\ProyectoDoral02\sireReport\Default\Sync Data\LevelDB since it was missing.
-2026/01/26-20:09:24.719 34d0 Reusing MANIFEST C:\Users\CORE I5\Documents\NetBeansProjects\ProyectoDoral02\sireReport\Default\Sync Data\LevelDB/MANIFEST-000001
+2026/02/16-19:25:59.493 1f60 Reusing MANIFEST C:\Users\CORE I5\Documents\NetBeansProjects\ProyectoDoral02\sireReport\Default\Sync Data\LevelDB/MANIFEST-000001
+2026/02/16-19:25:59.493 1f60 Recovering log #3
+2026/02/16-19:25:59.494 1f60 Reusing old log C:\Users\CORE I5\Documents\NetBeansProjects\ProyectoDoral02\sireReport\Default\Sync Data\LevelDB/000003.log 
