@@ -401,7 +401,23 @@ public final class Recepciones extends javax.swing.JFrame {
                     }
                     datosReporte.setNumDocumento(datosRegistro[9] != null ? datosRegistro[9] : "");
                     datosReporte.setTipoDocumento(datosRegistro[10] != null ? datosRegistro[10] : "");
-                    datosReporte.setFechaNacimiento(datosRegistro[11] != null ? datosRegistro[11] : "");
+                    
+                    // Convertir fecha de nacimiento de formato MySQL (yyyy-MM-dd) a formato SIRE (d/M/yyyy)
+                    String fechaNacimientoOriginal = datosRegistro[11] != null ? datosRegistro[11] : "";
+                    String fechaNacimientoFormateada = "";
+                    if (!fechaNacimientoOriginal.isEmpty()) {
+                        try {
+                            SimpleDateFormat formatoMySQL = new SimpleDateFormat("yyyy-MM-dd");
+                            SimpleDateFormat formatoSire = new SimpleDateFormat("d/M/yyyy");
+                            Date fecha = formatoMySQL.parse(fechaNacimientoOriginal);
+                            fechaNacimientoFormateada = formatoSire.format(fecha);
+                        } catch (ParseException pex) {
+                            System.err.println("Error al convertir fecha de nacimiento: " + pex.getMessage());
+                            fechaNacimientoFormateada = fechaNacimientoOriginal; // Usar original si falla la conversión
+                        }
+                    }
+                    datosReporte.setFechaNacimiento(fechaNacimientoFormateada);
+                    
                     datosReporte.setNacionalidad(datosRegistro[12] != null ? datosRegistro[12] : "");
                     String procedencia = datosRegistro[13] != null ? datosRegistro[13] : "";
                     String[] partesProce = procedencia.split("-");

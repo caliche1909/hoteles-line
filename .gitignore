@@ -30,20 +30,23 @@ Desktop.ini
 # Directorio de Chrome para WhatsApp (datos sensibles de sesión)
 /chromeWA/
 
-# Facturas generadas (opcional - descomenta si NO quieres subirlas)
-# /facturas/
+# Facturas generadas (contienen datos sensibles de clientes)
+/facturas/
 
 # Carpeta null (parece temporal)
 /null/
 
-# Configuración de VS Code (opcional - puedes incluirla si quieres compartir)
-# .vscode/
-
-# ⚠️ ARCHIVO DE CONFIGURACIÓN CON CREDENCIALES - NO SUBIR
-config.properties
+# Configuración de VS Code (cada desarrollador tiene su propia configuración)
+.vscode/
 
 # Marcador de entorno de producción
 .production
+
+# Reportes SIRE generados (contiene perfil de Chrome con datos de sesión)
+/sireReport/
+
+# Datos de cookies y sesión de WebDriver
+WebDriverCookies.data
 
 # Archivos de configuración con credenciales sensibles
 # IMPORTANTE: Protege tus credenciales de base de datos

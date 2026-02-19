@@ -762,7 +762,11 @@ public final class Registros extends javax.swing.JDialog implements Runnable {
 
                 }
 
-                manejarFlujoAsincronoParaExtranjeros(tipoMovimiento, fechaMovimiento, clienteARegistraR.getTipo_Documento(), clienteARegistraR.getFecha_Nacimiento().toString(),
+                // Formatear fecha de nacimiento para SIRE (formato d/M/yyyy, ej: 25/12/1980)
+                SimpleDateFormat formatoSire = new SimpleDateFormat("d/M/yyyy");
+                String fechaNacimientoFormateada = formatoSire.format(clienteARegistraR.getFecha_Nacimiento());
+                
+                manejarFlujoAsincronoParaExtranjeros(tipoMovimiento, fechaMovimiento, clienteARegistraR.getTipo_Documento(), fechaNacimientoFormateada,
                         clienteARegistraR.getNum_Documento(), primerApellido, segundoApellido, clienteARegistraR.getNombres(), nacionalidadSire, paisProce, deparProce, ciudadProce,
                         paisDest, deparDest, ciudadDest);
                 

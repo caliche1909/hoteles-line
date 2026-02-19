@@ -691,16 +691,13 @@ public final class ReporteSire {
             System.out.println("[SIRE] ⚠ No se pudo remover el foco: " + e.getMessage());
         }
 
-        // Espera hasta que el botón "Agregar Registro" esté disponible y clickeable
+        // PASO 1: Esperar y hacer clic automáticamente en "Agregar Registro"
         try {
-            System.out.println("[SIRE] Esperando que aparezca el botón de registro...");
-            //WebElement agregarRegistroButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("cargueFormHospedaje:j_id877")));
-            System.out.println("[SIRE] ✓ Botón encontrado - NO se hará click automático");
+            System.out.println("[SIRE] Esperando que aparezca el botón 'Agregar Registro'...");
+            WebElement agregarRegistroButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("cargueFormHospedaje:j_id877")));
+            System.out.println("[SIRE] ✓ Botón 'Agregar Registro' encontrado");
             
-            // IMPORTANTE: NO interactuar con el botón de ninguna forma
-            // No hacer hover, no hacer focus, solo verificar que existe
-            
-            // PRIMERO: Preparar la ventana de Chrome (maximizar y minimizar el foco)
+            // Preparar la ventana de Chrome antes de hacer clic
             try {
                 System.out.println("[SIRE] Preparando ventana del navegador...");
                 driver.manage().window().maximize();
@@ -710,13 +707,43 @@ public final class ReporteSire {
                 System.out.println("[SIRE] ⚠ Error al maximizar: " + e.getMessage());
             }
             
-            // SEGUNDO: Mostrar el mensaje al usuario
+            // Hacer clic en el botón "Agregar Registro"
+            System.out.println("[SIRE] Haciendo clic en 'Agregar Registro'...");
+            agregarRegistroButton.click();
+            System.out.println("[SIRE] ✓ Clic realizado en 'Agregar Registro'");
+            
+            // Esperar un momento para que SIRE procese el clic y muestre el botón "Guardar"
+            Thread.sleep(1500);
+            
+        } catch (Exception e) {
+            System.out.println("[SIRE] Error al hacer clic en 'Agregar Registro': " + e.getMessage());
+            return false;
+        }
+        
+        // PASO 2: Esperar a que aparezca el botón "Guardar" y mostrar mensaje al usuario
+        try {
+            System.out.println("[SIRE] Esperando que aparezca el botón 'Guardar'...");
+            // El botón "Guardar" suele aparecer después de "Agregar Registro"
+            // Intentar encontrarlo para confirmar que el formulario está listo
+            try {
+                // Esperar hasta 5 segundos a que aparezca el botón "Guardar"
+                WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+                WebElement guardarButton = shortWait.until(ExpectedConditions.presenceOfElementLocated(
+                    By.xpath("//input[@value='Guardar' or @value='GUARDAR' or contains(@id, 'guardar') or contains(@id, 'Guardar')]")
+                ));
+                
+                System.out.println("[SIRE] ✓ Botón 'Guardar' detectado");
+            } catch (Exception e) {
+                System.out.println("[SIRE] ⚠ No se detectó el botón 'Guardar' específicamente, pero continuando...");
+            }
+            
+            // Mostrar mensaje al usuario para que revise y haga clic en "Guardar"
             JOptionPane.showMessageDialog(null, 
-                "✅ FORMULARIO SIRE DILIGENCIADO\n\n" +
-                "El formulario de reporte SIRE ya está completado.\n\n" +
+                "✅ REGISTRO AGREGADO AL FORMULARIO SIRE\n\n" +
+                "El registro ha sido agregado al formulario exitosamente.\n\n" +
                 "Por favor:\n" +
-                "1. Revise que todos los datos sean correctos\n" +
-                "2. Haga clic en el botón 'AGREGAR REGISTRO'\n" +
+                "1. Verifique que todos los datos sean correctos\n" +
+                "2. Haga clic en el botón 'GUARDAR'\n" +
                 "3. Espere la confirmación de SIRE\n\n" +
                 "El navegador permanecerá abierto para que pueda completar el proceso.",
                 "Reporte SIRE - Acción Requerida",
@@ -724,7 +751,7 @@ public final class ReporteSire {
             
             System.out.println("[SIRE] Usuario notificado - Trayendo Chrome al frente...");
             
-            // TERCERO: Después de cerrar el diálogo, usar Robot para traer Chrome al frente
+            // Usar Robot para traer Chrome al frente después de cerrar el diálogo
             try {
                 // Esperar 1 segundo para que el JOptionPane se cierre completamente
                 Thread.sleep(1000);
@@ -746,11 +773,8 @@ public final class ReporteSire {
                 System.out.println("[SIRE] ⚠ No se pudo traer completamente al frente: " + e.getMessage());
             }
             
-            // ⚠️ CRÍTICO: NO hacer click automático
-            // agregarRegistroButton.click();  // ← NUNCA descomentar esta línea
-            
         } catch (Exception e) {
-            System.out.println("[SIRE] Error al verificar el botón 'Agregar Registro': " + e.getMessage());
+            System.out.println("[SIRE] Error al mostrar mensaje de confirmación: " + e.getMessage());
             return false;
         }
         return true;
